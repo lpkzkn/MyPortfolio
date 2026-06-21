@@ -1,0 +1,30 @@
+{
+  "$schema": "https://markuplint.dev/schema/v4/markuplintrc.json",
+  "parser": {
+    ".tsx?$": "@markuplint/jsx-parser"
+  },
+  "specs": {
+    ".tsx?$": "@markuplint/react-spec"
+  },
+  "rules": {
+    "attr-duplication": true,
+    "deprecated-attr": true,
+    "deprecated-element": true,
+    "disallowed-element": ["script"],
+    "id-duplication": true,
+    "ineffective-attr": false,
+    "invalid-attr": true,
+    "no-refer-to-non-existent-id": true,
+    "required-attr": true,
+    "wai-aria": true
+  },
+  "nodeRules": [
+    {
+      "selector": "head",
+      "rules": {
+        "permitted-contents": false
+      }
+    }
+  ],
+  "excludeFiles": ["node_modules/**", "dist/**", ".tanstack/**"]
+}

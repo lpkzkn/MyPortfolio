@@ -1,0 +1,14 @@
+pre-commit:
+  parallel: false
+  commands:
+    biome:
+      name: Biome (lint & format)
+      run: bun run lint
+      stage_fixed: true
+    typecheck:
+      name: TypeScript
+      run: bun run typecheck
+    markuplint:
+      name: Markuplint
+      run: bun run lint:markup
+      glob: "*.{tsx,jsx}"

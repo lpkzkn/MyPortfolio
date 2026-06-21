@@ -1,5 +1,7 @@
 # MyPortfolio
 
+**🌐 [https://lpkzkn.github.io/MyPortfolio/](https://lpkzkn.github.io/MyPortfolio/)**
+
 フロントエンドエンジニアの職務経歴・実績紹介ポートフォリオサイト。
 
 ## 技術スタック
@@ -71,4 +73,4 @@ src/
 
 GitHub側でリポジトリの Settings → Pages → Source を「GitHub Actions」に設定してください。
 
-公開URL: `https://<your-github-username>.github.io/MyPortfolio/`
+公開URL: [https://lpkzkn.github.io/MyPortfolio/](https://lpkzkn.github.io/MyPortfolio/)

@@ -1,0 +1,9 @@
+/*
+ * テーマファイルの集約。
+ * 新しいテーマを追加したら、このファイルに @import を1行追加する。
+ * （lib/theme.ts の THEMES 配列への追加もあわせて必要）
+ */
+@import "./light.css";
+@import "./happy-orange.css";
+@import "./gaming-red.css";
+@import "./sakura-pink.css";

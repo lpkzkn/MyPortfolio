@@ -1,0 +1,24 @@
+/*
+ * light テーマ
+ *
+ * tokens.css の :root デフォルト値と同じ内容を、
+ * 明示的に [data-theme='light'] としても定義しておく。
+ * これにより「テーマを明示指定しないとデフォルトが当たらない」事態を防ぎ、
+ * 他のテーマファイルと構造を完全に揃えておく。
+ */
+[data-theme="light"] {
+  --color-surface: #ffffff;
+  --color-surface-subtle: var(--color-gray-50);
+  --color-border: var(--color-gray-200);
+
+  --color-text-default: var(--color-gray-900);
+  --color-text-muted: var(--color-gray-600);
+  --color-text-on-action: #ffffff;
+
+  --color-action-primary: var(--color-blue-500);
+  --color-action-primary-hover: var(--color-blue-600);
+  --color-action-secondary: var(--color-gray-100);
+  --color-action-secondary-hover: var(--color-gray-200);
+  --color-action-danger: #dc2626;
+  --color-action-danger-hover: #b91c1c;
+}

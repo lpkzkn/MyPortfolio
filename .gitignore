@@ -1,0 +1,10 @@
+node_modules
+dist
+.output
+.tanstack
+.vinxi
+*.local
+.DS_Store
+.env
+.env.local
+routeTree.gen.ts

@@ -1,0 +1,25 @@
+/*
+ * happy-orange テーマ
+ *
+ * 新しいテーマを追加する手順:
+ * 1. このファイルをコピーして styles/themes/<theme-name>.css を作る
+ * 2. [data-theme='<theme-name>'] のセレクタに変更し、トークン名一式を上書きする
+ * 3. styles/themes/index.css に @import を追加する
+ * 4. lib/theme.ts の THEMES 配列に '<theme-name>' を追加する
+ */
+[data-theme="happy-orange"] {
+  --color-surface: #fff7ed;
+  --color-surface-subtle: #ffedd5;
+  --color-border: #fed7aa;
+
+  --color-text-default: #7c2d12;
+  --color-text-muted: #9a3412;
+  --color-text-on-action: #ffffff;
+
+  --color-action-primary: #f97316;
+  --color-action-primary-hover: #ea580c;
+  --color-action-secondary: #fed7aa;
+  --color-action-secondary-hover: #fdba74;
+  --color-action-danger: #dc2626;
+  --color-action-danger-hover: #b91c1c;
+}

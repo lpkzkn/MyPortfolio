@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import "./themes/index.css";
+
+/*
+ * デザイントークンの3層構造
+ *
+ * 1. Primitive  : 生の値（gray-900, blue-500 のような具体色）
+ * 2. Semantic   : 意味づけされたトークン（action-primary, text-default など）
+ * 3. Component  : 各コンポーネント固有の調整（必要な場合のみ、コンポーネント側で定義）
+ *
+ * コンポーネント（cva）からは Semantic レイヤーのみを参照し、
+ * Primitive の値を直接コンポーネントに書かないことを徹底する。
+ * これによりテーマ追加時はこのファイル（または themes/*.css）の変更だけで完結する。
+ */
+
+@theme {
+  /* ---------- Primitive: ベースカラースケール ---------- */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-600: #4b5563;
+  --color-gray-900: #111827;
+
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+
+  /* ---------- Semantic: デフォルト（light）テーマの意味づけ ----------
+   * 各テーマファイル（styles/themes/*.css）はこれと同じトークン名一式を
+   * [data-theme='xxx'] スコープ内で上書きする。
+   */
+  --color-surface: #ffffff;
+  --color-surface-subtle: var(--color-gray-50);
+  --color-border: var(--color-gray-200);
+
+  --color-text-default: var(--color-gray-900);
+  --color-text-muted: var(--color-gray-600);
+  --color-text-on-action: #ffffff;
+
+  --color-action-primary: var(--color-blue-500);
+  --color-action-primary-hover: var(--color-blue-600);
+  --color-action-secondary: var(--color-gray-100);
+  --color-action-secondary-hover: var(--color-gray-200);
+  --color-action-danger: #dc2626;
+  --color-action-danger-hover: #b91c1c;
+
+  /* ---------- Layout / Spacing ---------- */
+  --spacing-section: 4rem;
+  --spacing-component: 1.5rem;
+
+  /* ---------- Typography ---------- */
+  --font-size-display: 2.5rem;
+  --font-size-heading: 1.5rem;
+  --font-size-body: 1rem;
+  --font-size-caption: 0.75rem;
+}

@@ -1,0 +1,20 @@
+/*
+ * sakura-pink テーマ
+ * 同じ更新手順は happy-orange.css 冒頭のコメントを参照。
+ */
+[data-theme="sakura-pink"] {
+  --color-surface: #fdf2f8;
+  --color-surface-subtle: #fce7f3;
+  --color-border: #fbcfe8;
+
+  --color-text-default: #831843;
+  --color-text-muted: #9d174d;
+  --color-text-on-action: #ffffff;
+
+  --color-action-primary: #ec4899;
+  --color-action-primary-hover: #db2777;
+  --color-action-secondary: #fce7f3;
+  --color-action-secondary-hover: #fbcfe8;
+  --color-action-danger: #dc2626;
+  --color-action-danger-hover: #b91c1c;
+}

@@ -8,3 +8,9 @@ dist
 .env
 .env.local
 routeTree.gen.ts
+
+# Chrome DevTools profile (大量のキャッシュファイルが生成される)
+.chrome-profile/
+
+# VSCode editor settings
+.vscode/

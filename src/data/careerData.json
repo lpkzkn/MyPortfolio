@@ -1,0 +1,78 @@
+{
+  "engineer_profile": {
+    "career_history": [
+      {
+        "period": "〜2014/03",
+        "category": "専門学校・キャリア初期",
+        "role": "エンジニア",
+        "tech_stack": ["C++", "DirectX"]
+      },
+      {
+        "period": "2014/04 - 2014/08",
+        "category": "クライアント向け受託開発",
+        "role": "エンジニア",
+        "tech_stack": ["C++", "Cocos2d-x"]
+      },
+      {
+        "period": "2014/09 - 2016/03",
+        "category": "自社ソーシャルゲーム新規開発",
+        "role": "エンジニア",
+        "tech_stack": ["Cocos2d-x", "Cocos2d-js"]
+      },
+      {
+        "period": "2016/04 - 2016/07",
+        "category": "カジュアルゲーム開発",
+        "role": "エンジニア",
+        "tech_stack": ["Cocos2d-js"]
+      },
+      {
+        "period": "2016/08 - 2017/05",
+        "category": "大規模RPG運用・開発",
+        "role": "エンジニア",
+        "tech_stack": ["Unity", "WebGL", "Node.js", "MongoDB"]
+      },
+      {
+        "period": "2017/06 - 2017/11",
+        "category": "ブラウザ向け戦略RPG開発",
+        "role": "エンジニア",
+        "tech_stack": ["Unity", "WebGL", "NiftyCloud"]
+      },
+      {
+        "period": "2017/12",
+        "category": "大手プラットフォーム向けブラウザゲーム",
+        "role": "エンジニア",
+        "tech_stack": ["Unity", "WebGL", "Azure"]
+      },
+      {
+        "period": "2018/01 - 2018/08",
+        "category": "ソーシャルゲーム運用・開発",
+        "role": "リーダー",
+        "tech_stack": ["Unity", "C#", "Vue.js", "Node.js", "AWS"]
+      },
+      {
+        "period": "2018/09 - 2019/01",
+        "category": "大規模IPソーシャルゲーム開発",
+        "role": "エンジニア",
+        "tech_stack": ["Unity", "Node.js", "MongoDB", "Redis"]
+      },
+      {
+        "period": "2019/02 - 2019/04",
+        "category": "新規事業向け開発キット構築",
+        "role": "PM補佐",
+        "tech_stack": ["Cocos2d-js", "WebGL", "Node.js"]
+      },
+      {
+        "period": "2019/05 - 2022/01",
+        "category": "ソーシャルゲーム運用・開発",
+        "role": "リーダー",
+        "tech_stack": ["Unity", "C#", "Vue.js", "Node.js"]
+      },
+      {
+        "period": "2022/02 - 現在",
+        "category": "ECサービス開発・運用",
+        "role": "リーダー",
+        "tech_stack": ["React", "TypeScript", "Node.js", "AWS"]
+      }
+    ]
+  }
+}

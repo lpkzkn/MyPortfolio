@@ -14,3 +14,8 @@ routeTree.gen.ts
 
 # VSCode editor settings
 .vscode/
+
+# Gemini context mode session files and output logs
+.github/context-mode/
+stats_output.txt
+

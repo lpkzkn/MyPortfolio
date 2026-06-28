@@ -39,7 +39,7 @@
   - デザインシステムコンポーネントと、各 feature 内にコロケーションされる特化型コンポーネントの依存関係ルール。
 
 ## 仕様（依存順）
-- [ ] [infrastructure](file:///Users/fujisakikazuhiko/Project/MyPortfolio/.kiro/specs/infrastructure/brief.md) -- プロジェクト全体のディレクトリ設計、ベースレイアウト、Tailwind v4デザインシステム定義、およびGitHub Pages向けビルド・デプロイ設定。 Dependencies: なし
-- [ ] [resume-ssg](file:///Users/fujisakikazuhiko/Project/MyPortfolio/.kiro/specs/resume-ssg/brief.md) -- Markdownベースの職務経歴・実績データのパースと、ビルド時の静的プレレンダリング機能の実装。 Dependencies: infrastructure
-- [ ] [github-showcase](file:///Users/fujisakikazuhiko/Project/MyPortfolio/.kiro/specs/github-showcase/brief.md) -- GitHub APIを連携した動的なリポジトリ/コミット履歴表示と、TanStack Queryによるキャッシュおよび Skeleton UI の実装。 Dependencies: infrastructure
-- [ ] [component-catalog](file:///Users/fujisakikazuhiko/Project/MyPortfolio/.kiro/specs/component-catalog/brief.md) -- 自作デザインシステムコンポーネントの一覧およびインタラクティブな動作検証ができるコンポーネントカタログページの作成。 Dependencies: infrastructure, resume-ssg
+- [x] [infrastructure](file:///Users/fujisakikazuhiko/Project/MyPortfolio/.kiro/specs/infrastructure/brief.md) -- プロジェクト全体のディレクトリ設計、ベースレイアウト、Tailwind v4デザインシステム定義、およびGitHub Pages向けビルド・デプロイ設定。 Dependencies: なし
+- [x] [resume-ssg](file:///Users/fujisakikazuhiko/Project/MyPortfolio/.kiro/specs/resume-ssg/brief.md) -- Markdownベースの職務経歴・実績データのパースと、ビルド時の静的プレレンダリング機能の実装。 Dependencies: infrastructure
+- [x] [github-showcase](file:///Users/fujisakikazuhiko/Project/MyPortfolio/.kiro/specs/github-showcase/brief.md) -- GitHub APIを連携した動的なリポジトリ/コミット履歴表示と、TanStack Queryによるキャッシュおよび Skeleton UI の実装。 Dependencies: infrastructure
+- [x] [component-catalog](file:///Users/fujisakikazuhiko/Project/MyPortfolio/.kiro/specs/component-catalog/brief.md) -- 自作デザインシステムコンポーネントの一覧およびインタラクティブな動作検証ができるコンポーネントカタログページの作成。 Dependencies: infrastructure, resume-ssg

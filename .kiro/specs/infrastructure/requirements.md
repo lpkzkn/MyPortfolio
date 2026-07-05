@@ -6,7 +6,7 @@
 ## Boundary Context
 - **In scope**:
   - `src/features/`, `src/components/ui/`, `src/hooks/`, `src/utils/` ディレクトリ構造の定義と統一
-  - Tailwind CSS v4 を適用したグローバルスタイル（カラーパレット、フォント、ダークモード）の設定
+  - Tailwind CSS v4 を適用したグローバルスタイル（カラーパレット、フォント、マルチテーマ）の設定
   - アプリ全体の基本シェルレイアウト（ナビゲーションヘッダー、フッター）の構築
   - GitHub Pages 向けの静的プレレンダリング（SSG）用ビルド・デプロイ設定（GitHub Actions）
   - Biome、Markuplint、TypeScript による静的解析および型チェックの CI 統合

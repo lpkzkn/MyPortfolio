@@ -1,0 +1,37 @@
+{
+  "companies": [
+    {
+      "name": "株式会社サンプル",
+      "period": "2024.04 - 現在",
+      "role": "リードエンジニア",
+      "details": [
+        "React 19 と TanStack を使った新規ポートフォリオ設計",
+        "CI/CD パイプラインの最適化"
+      ]
+    },
+    {
+      "name": "合同会社プロトタイプ",
+      "period": "2021.04 - 2024.03",
+      "role": "フロントエンドエンジニア",
+      "details": [
+        "Next.js を用いたECサイトの表示速度改善 (LCPを2.5秒以下に短縮)",
+        "共通UIコンポーネントライブラリの設計および社内展開"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "My Portfolio",
+      "description": "本ポートフォリオサイト。React 19, TanStack Router, Tailwind CSS v4 などの最新スタックを用い、GitHub Pages 向けに完全 SSG する極小アーキテクチャで構築しています。",
+      "tech": ["React 19", "TanStack Router", "Tailwind CSS v4"],
+      "github": "https://github.com/lpkzkn/MyPortfolio"
+    },
+    {
+      "title": "React Component Library",
+      "description": "CVA (Class Variance Authority) と tailwind-merge を活用し、拡張性とテーマカスタマイズ性に優れたヘッドレスUIコンポーネント集。",
+      "tech": ["React", "Tailwind CSS", "CVA"],
+      "github": "https://github.com/lpkzkn/react-cva-components"
+    }
+  ],
+  "introduction": "フロントエンド開発を中心に、デザインシステム構築やパフォーマンスチューニングを得意とするエンジニアです。型安全な設計と表示速度の最適化に強いこだわりを持っています。"
+}

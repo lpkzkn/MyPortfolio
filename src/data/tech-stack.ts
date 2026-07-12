@@ -34,6 +34,16 @@ export const techStackData: TechNode[] = [
           { id: 'vite', name: 'Vite / Build Tools', score: 80 },
         ],
       },
+      {
+        id: 'fe-design',
+        name: 'デザイン',
+        score: 80,
+        children: [
+          { id: 'design-system', name: 'DesignSystem', score: 85 },
+          { id: 'figma', name: 'Figma', score: 80 },
+          { id: 'storybook', name: 'Storybook', score: 85 },
+        ],
+      },
     ],
   },
   {

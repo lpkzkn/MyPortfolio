@@ -40,7 +40,7 @@ export const StatusPanel: React.FC<StatusPanelProps> = ({ activeNode, rootNodes,
                   {hasChildren && <span className="text-action-primary">▶</span>}
                   {node.name}
                 </span>
-                <span className="text-xs text-action-primary font-bold">LV.{node.score}</span>
+                <span className="text-xs text-action-primary font-bold">{node.score}</span>
               </div>
 
               {/* RPG HP/MP style gauge bar */}

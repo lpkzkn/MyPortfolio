@@ -1,0 +1,33 @@
+name: Pull Request Check
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pr-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - run: bun install --frozen-lockfile
+
+      - name: Run Linter (Biome)
+        run: bun run lint
+
+      - name: Run Markup Linter (Markuplint)
+        run: bun run lint:markup
+
+      - name: Run Typecheck
+        run: bun run typecheck
+
+      - name: Run Build
+        run: bun run build

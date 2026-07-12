@@ -54,7 +54,7 @@ export const techStackData: TechNode[] = [
   {
     id: 'backend',
     name: 'バックエンド',
-    score: 30,
+    score: 50,
     children: [
       {
         id: 'be-api',
@@ -76,7 +76,7 @@ export const techStackData: TechNode[] = [
   {
     id: 'infrastructure',
     name: 'インフラ・クラウド',
-    score: 10,
+    score: 20,
     children: [
       {
         id: 'infra-cloud',
@@ -132,7 +132,7 @@ export const techStackData: TechNode[] = [
   {
     id: 'ai',
     name: 'AI・エージェント',
-    score: 50,
+    score: 70,
     children: [
       {
         id: 'ai-agentic',

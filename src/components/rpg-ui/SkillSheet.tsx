@@ -61,7 +61,7 @@ export const SkillSheet: React.FC = () => {
           能力ステータス
         </h2>
         <p className="text-xs text-text-muted mt-1 uppercase tracking-wider">
-          一般化された技術スタックパラメータ
+          技術スタックの習得レベルとバランス
         </p>
       </div>
 

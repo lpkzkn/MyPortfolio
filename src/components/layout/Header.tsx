@@ -3,7 +3,6 @@ import { ThemeSwitcher } from '~/features/theme/ThemeSwitcher'
 
 const NAV_ITEMS = [
   { to: '/', label: 'Top' },
-  { to: '/career', label: '職務経歴' },
   { to: '/resume', label: '経歴・実績' },
   { to: '/works', label: '実績紹介' },
   { to: '/catalog', label: 'デザインシステム' },

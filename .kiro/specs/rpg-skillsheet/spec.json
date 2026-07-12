@@ -1,0 +1,22 @@
+{
+  "feature_name": "rpg-skillsheet",
+  "created_at": "2026-07-12T18:53:00+09:00",
+  "updated_at": "2026-07-12T18:53:00+09:00",
+  "language": "ja",
+  "phase": "tasks-generated",
+  "approvals": {
+    "requirements": {
+      "generated": true,
+      "approved": true
+    },
+    "design": {
+      "generated": true,
+      "approved": true
+    },
+    "tasks": {
+      "generated": true,
+      "approved": true
+    }
+  },
+  "ready_for_implementation": true
+}

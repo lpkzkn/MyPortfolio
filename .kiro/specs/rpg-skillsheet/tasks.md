@@ -40,7 +40,7 @@
   - _Depends: 1, 3, 4_
   - _Boundary: SkillSheet_
 
-- [ ] 6. 座標計算ロジックのUnitテスト実装
+- [x] 6. 座標計算ロジックのUnitテスト実装
   - レーダーチャートの頂点計算ロジックをテストするためのユニットテスト（`RadarChart.test.ts` 等）を追加する。
   - Observable: `vitest` 等のテストランナーで対象のテストがPASSすること。
   - _Requirements: 2_

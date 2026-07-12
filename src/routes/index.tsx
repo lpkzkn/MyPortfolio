@@ -19,8 +19,8 @@ function HomePage() {
         見た目のバリエーションを試せます。
       </p>
       <div className="mt-8 flex gap-4">
-        <Link to="/career">
-          <SimpleButton.Primary>職務経歴を見る</SimpleButton.Primary>
+        <Link to="/resume">
+          <SimpleButton.Primary>経歴・実績を見る</SimpleButton.Primary>
         </Link>
         <Link to="/works">
           <SimpleButton.Secondary>実績を見る</SimpleButton.Secondary>

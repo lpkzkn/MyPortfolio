@@ -28,13 +28,40 @@ export function Timeline({ companies }: TimelineProps) {
               </span>
             </div>
 
-            <ul className="space-y-2 list-disc list-inside text-body text-text-muted">
-              {company.details.map((detail) => (
-                <li key={detail} className="leading-relaxed pl-1 marker:text-action-primary">
-                  <span className="text-text-default">{detail}</span>
-                </li>
-              ))}
-            </ul>
+            {company.projects && company.projects.length > 0 ? (
+              <div className="space-y-6">
+                {company.projects.map((proj) => (
+                  <div key={proj.title} className="border-l-2 border-border pl-4 space-y-2">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <h4 className="text-body font-bold text-text-default">{proj.title}</h4>
+                      {proj.period && (
+                        <span className="text-caption text-text-muted bg-surface-subtle px-2 py-0.5 rounded border border-border">
+                          {proj.period}
+                        </span>
+                      )}
+                    </div>
+                    <ul className="space-y-1.5 list-disc list-inside text-body text-text-muted">
+                      {proj.details.map((detail) => (
+                        <li
+                          key={detail}
+                          className="leading-relaxed pl-1 marker:text-action-primary"
+                        >
+                          <span className="text-text-default">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            ) : company.details && company.details.length > 0 ? (
+              <ul className="space-y-2 list-disc list-inside text-body text-text-muted">
+                {company.details.map((detail) => (
+                  <li key={detail} className="leading-relaxed pl-1 marker:text-action-primary">
+                    <span className="text-text-default">{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </div>
         </div>
       ))}

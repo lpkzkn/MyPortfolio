@@ -31,7 +31,8 @@ export const techStackData: TechNode[] = [
         score: 80,
         children: [
           { id: 'playwright', name: 'E2E (Playwright)', score: 85 },
-          { id: 'vite', name: 'Vite / Build Tools', score: 80 },
+          { id: 'appium', name: 'Appium (モバイルテスト)', score: 80 },
+          { id: 'bdd', name: 'BDD (振る舞い駆動開発)', score: 85 },
         ],
       },
       {

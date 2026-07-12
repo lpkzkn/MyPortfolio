@@ -112,4 +112,21 @@ export const techStackData: TechNode[] = [
       },
     ],
   },
+  {
+    id: 'ai',
+    name: 'AI・エージェント',
+    score: 90,
+    children: [
+      {
+        id: 'ai-agentic',
+        name: 'エージェント志向開発',
+        score: 90,
+        children: [
+          { id: 'agentic-coding', name: 'Agentic Coding', score: 90 },
+          { id: 'agent-skill', name: 'Agent SKILL', score: 85 },
+          { id: 'sdd', name: 'SDD (仕様駆動開発)', score: 95 },
+        ],
+      },
+    ],
+  },
 ]

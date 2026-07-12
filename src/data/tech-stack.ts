@@ -38,6 +38,16 @@ export const techStackData: TechNode[] = [
           { id: 'csharp', name: 'C# / C++', score: 80 },
         ],
       },
+      {
+        id: 'fe-design',
+        name: 'デザイン',
+        score: 80,
+        children: [
+          { id: 'design-system', name: 'DesignSystem', score: 85 },
+          { id: 'figma', name: 'Figma', score: 80 },
+          { id: 'storybook', name: 'Storybook', score: 85 },
+        ],
+      },
     ],
   },
   {
@@ -103,6 +113,7 @@ export const techStackData: TechNode[] = [
         children: [
           { id: 'playwright', name: 'Playwright (E2E)', score: 90 },
           { id: 'bdd', name: 'BDD (振る舞い駆動開発)', score: 85 },
+          { id: 'jest', name: 'Jest / Unit Test', score: 85 },
         ],
       },
       {

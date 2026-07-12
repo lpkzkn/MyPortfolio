@@ -107,7 +107,7 @@ export function CatalogView() {
       </aside>
 
       {/* Main Content */}
-      <div className="flex-1 space-y-24">
+      <div className="flex-1 min-w-0 space-y-24">
         <TokenSection />
         <hr className="border-border" />
         <ComponentSection />

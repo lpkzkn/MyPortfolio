@@ -14,7 +14,7 @@
   - _Requirements: 2_
   - _Boundary: RadarChart_
 
-- [ ] 3. RadarChartのシーケンシャルアニメーションとインタラクション実装
+- [x] 3. RadarChartのシーケンシャルアニメーションとインタラクション実装
   - `IntersectionObserver` を用いて、ビューポート侵入時に以下の順番で描画されるアニメーションを実装する（`setTimeout` によるフェーズ管理やCSSディレイを活用）。
     1. 外枠となる円の出現
     2. 中心から放射状に伸びる罫線の出現

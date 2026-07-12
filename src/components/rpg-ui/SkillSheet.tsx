@@ -5,9 +5,59 @@ import { RadarChart } from './RadarChart'
 import type { RadarChartData } from './RadarChart'
 import { StatusPanel } from './StatusPanel'
 
-export const SkillSheet: React.FC = () => {
-  const [activeNode, setActiveNode] = useState<TechNode | null>(null)
-  const [history, setHistory] = useState<TechNode[]>([])
+interface SkillSheetProps {
+  activeNodeId?: string
+  onChangeActiveNodeId?: (id: string | undefined) => void
+}
+
+export const SkillSheet: React.FC<SkillSheetProps> = ({
+  activeNodeId: propActiveNodeId,
+  onChangeActiveNodeId,
+}) => {
+  const isControlled = propActiveNodeId !== undefined || onChangeActiveNodeId !== undefined
+  const [localActiveNodeId, setLocalActiveNodeId] = useState<string | undefined>(undefined)
+
+  const activeNodeId = isControlled ? propActiveNodeId : localActiveNodeId
+
+  const handleSetActiveNodeId = (id: string | undefined) => {
+    if (isControlled) {
+      onChangeActiveNodeId?.(id)
+    } else {
+      setLocalActiveNodeId(id)
+    }
+  }
+
+  // Helper to find target node and its parents
+  const findNodeAndParents = React.useCallback(
+    (
+      nodes: TechNode[],
+      targetId: string,
+      parents: TechNode[] = [],
+    ): { node: TechNode; parents: TechNode[] } | null => {
+      for (const node of nodes) {
+        if (node.id === targetId) {
+          return { node, parents }
+        }
+        if (node.children) {
+          const result = findNodeAndParents(node.children, targetId, [...parents, node])
+          if (result) return result
+        }
+      }
+      return null
+    },
+    [],
+  )
+
+  const { activeNode, history } = React.useMemo(() => {
+    if (!activeNodeId) {
+      return { activeNode: null, history: [] }
+    }
+    const result = findNodeAndParents(techStackData, activeNodeId)
+    if (result) {
+      return { activeNode: result.node, history: result.parents }
+    }
+    return { activeNode: null, history: [] }
+  }, [activeNodeId, findNodeAndParents])
 
   const currentNodes = activeNode ? activeNode.children || [] : techStackData
 
@@ -20,8 +70,7 @@ export const SkillSheet: React.FC = () => {
   const handleItemClick = (node: TechNode) => {
     if (node.id === activeNode?.id) return
     if (node.children && node.children.length > 0) {
-      setHistory((prev) => (activeNode ? [...prev, activeNode] : []))
-      setActiveNode(node)
+      handleSetActiveNodeId(node.id)
     }
   }
 
@@ -32,11 +81,9 @@ export const SkillSheet: React.FC = () => {
     }
   }
 
-  const handleBreadcrumbClick = (node: TechNode | null, index: number) => {
+  const handleBreadcrumbClick = (node: TechNode | null) => {
     if (node?.id === activeNode?.id) return
-    const newHistory = index > 0 ? history.slice(0, index - 1) : []
-    setHistory(newHistory)
-    setActiveNode(node)
+    handleSetActiveNodeId(node ? node.id : undefined)
   }
 
   // Generate breadcrumb path
@@ -73,7 +120,7 @@ export const SkillSheet: React.FC = () => {
             {idx > 0 && <span className="text-border">/</span>}
             <button
               type="button"
-              onClick={() => handleBreadcrumbClick(bc.node, idx)}
+              onClick={() => handleBreadcrumbClick(bc.node)}
               className={`hover:text-action-primary transition-colors cursor-pointer ${
                 idx === arr.length - 1 ? 'text-action-primary font-bold' : ''
               }`}

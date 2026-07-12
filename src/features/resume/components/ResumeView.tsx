@@ -5,9 +5,11 @@ import { Timeline } from './Timeline'
 
 interface ResumeViewProps {
   data: ResumeData
+  activeNodeId?: string
+  onChangeActiveNodeId?: (id: string | undefined) => void
 }
 
-export function ResumeView({ data }: ResumeViewProps) {
+export function ResumeView({ data, activeNodeId, onChangeActiveNodeId }: ResumeViewProps) {
   return (
     <div className="space-y-16">
       {/* Intro Section */}
@@ -26,7 +28,7 @@ export function ResumeView({ data }: ResumeViewProps) {
           活かせる経験・知識・技術
         </h2>
         <div className="mt-6">
-          <SkillSheet />
+          <SkillSheet activeNodeId={activeNodeId} onChangeActiveNodeId={onChangeActiveNodeId} />
         </div>
       </section>
 

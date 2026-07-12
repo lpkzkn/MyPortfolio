@@ -18,16 +18,15 @@
 ## Scope
 - **In**:
   - `resume` 機能ディレクトリ（`src/features/resume/`）の作成
-  - Markdown ファイル（職務経歴書、実績リスト）のデータソース設計
-  - ビルド時パース処理（MD/MDXパーサーの導入とローダー設計）
+  - JSON ファイル（職務経歴書、実績リスト）のデータソース設計
+  - ビルド時のデータ読み込みおよび型安全なローダー設計
   - 経歴データを表示するレスポンシブなタイムラインUI / カードUI
   - 静的プレレンダリングの動作検証
 - **Out**:
-  - GitHub 等の外部 API からの動的なリアルタイムデータフェッチ（`github-showcase`で対応）
+  - 外部 API からの動的なリアルタイムデータフェッチ
 
 ## Boundary Candidates
 - `src/features/resume/components/`: タイムラインや実績カードなどの専用UI
-- `src/features/resume/utils/`: Markdown パースユーティリティ
 
 ## Out of Boundary
 - 外部APIとの通信処理
@@ -38,7 +37,7 @@
 
 ## Existing Spec Touchpoints
 - **Extends**: なし
-- **Adjacent**: `github-showcase`（同じポートフォリオ内の実績表示だが、こちらは静的処理）
+- **Adjacent**: なし
 
 ## Constraints
-- ビルドプロセス中に Markdown パースエラーが発生した場合、適切にビルドエラーとして検知されること。
+- ビルドプロセス中に JSON パースエラーが発生した場合、適切にビルドエラーとして検知されること。

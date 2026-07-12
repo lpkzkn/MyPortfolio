@@ -36,7 +36,7 @@
 
 ## Upstream / Downstream
 - **Upstream**: なし
-- **Downstream**: `resume-ssg`, `github-showcase`, `component-catalog`
+- **Downstream**: `resume-ssg`, `component-catalog`
 
 ## Existing Spec Touchpoints
 - **Extends**: なし

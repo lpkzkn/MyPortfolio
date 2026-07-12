@@ -18,6 +18,7 @@ export const SkillSheet: React.FC = () => {
   }))
 
   const handleItemClick = (node: TechNode) => {
+    if (node.id === activeNode?.id) return
     if (node.children && node.children.length > 0) {
       setHistory((prev) => (activeNode ? [...prev, activeNode] : []))
       setActiveNode(node)
@@ -32,8 +33,8 @@ export const SkillSheet: React.FC = () => {
   }
 
   const handleBreadcrumbClick = (node: TechNode | null, index: number) => {
-    if (node === activeNode) return
-    const newHistory = history.slice(0, index)
+    if (node?.id === activeNode?.id) return
+    const newHistory = index > 0 ? history.slice(0, index - 1) : []
     setHistory(newHistory)
     setActiveNode(node)
   }

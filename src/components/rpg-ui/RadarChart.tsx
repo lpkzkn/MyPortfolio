@@ -19,9 +19,9 @@ export const RadarChart: React.FC<RadarChartProps> = ({ data, maxVal = 100, onLa
   const rMax = 100
   const n = data.length
 
-  const [animationPhase, setAnimationPhase] = React.useState<'idle' | 'circle' | 'grid' | 'value'>(
-    'idle',
-  )
+  const [animationPhase, setAnimationPhase] = React.useState<
+    'idle' | 'circle' | 'grid' | 'points' | 'value'
+  >('idle')
   const containerRef = React.useRef<HTMLDivElement>(null)
 
   React.useEffect(() => {
@@ -54,8 +54,12 @@ export const RadarChart: React.FC<RadarChartProps> = ({ data, maxVal = 100, onLa
       return () => clearTimeout(t1)
     }
     if (animationPhase === 'grid') {
-      const t2 = setTimeout(() => setAnimationPhase('value'), 300)
+      const t2 = setTimeout(() => setAnimationPhase('points'), 300)
       return () => clearTimeout(t2)
+    }
+    if (animationPhase === 'points') {
+      const t3 = setTimeout(() => setAnimationPhase('value'), 700)
+      return () => clearTimeout(t3)
     }
   }, [animationPhase])
 
@@ -76,19 +80,28 @@ export const RadarChart: React.FC<RadarChartProps> = ({ data, maxVal = 100, onLa
   }
 
   // Determine display values based on animation phase
-  const displayData = animationPhase === 'value' ? data : data.map((d) => ({ ...d, value: 0 }))
+  // In idle/circle/grid phases, keep values at 0.
+  // In points/value phases, expand to actual values.
+  const displayData =
+    animationPhase === 'points' || animationPhase === 'value'
+      ? data
+      : data.map((d) => ({ ...d, value: 0 }))
 
   // Coordinates of data points
   const pointsStr = getRadarPoints(displayData, cx, cy, rMax, maxVal)
 
   const circleVisible = animationPhase !== 'idle'
-  const gridVisible = animationPhase === 'grid' || animationPhase === 'value'
+  const gridVisible =
+    animationPhase === 'grid' || animationPhase === 'points' || animationPhase === 'value'
 
   return (
     <div ref={containerRef} className="relative w-full max-w-[300px] aspect-square mx-auto">
       <svg
         viewBox="0 0 300 300"
-        className="w-full h-full overflow-visible drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]"
+        className="w-full h-full overflow-visible"
+        style={{
+          filter: 'drop-shadow(0 0 8px var(--color-action-primary))',
+        }}
       >
         <title>Radar Chart</title>
         {/* Outer Circular Summoning Frame */}
@@ -97,9 +110,10 @@ export const RadarChart: React.FC<RadarChartProps> = ({ data, maxVal = 100, onLa
           cy={cy}
           r={rMax + 5}
           fill="none"
-          stroke="currentColor"
-          className={`text-purple-500/20 origin-center transition-all duration-700 ease-out ${
-            circleVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+          stroke="var(--color-action-primary)"
+          style={{ opacity: circleVisible ? 0.2 : 0 }}
+          className={`origin-center transition-all duration-700 ease-out ${
+            circleVisible ? 'scale-100' : 'scale-0'
           }`}
           strokeWidth="1"
         />
@@ -108,9 +122,10 @@ export const RadarChart: React.FC<RadarChartProps> = ({ data, maxVal = 100, onLa
           cy={cy}
           r={rMax + 10}
           fill="none"
-          stroke="currentColor"
-          className={`text-purple-500/10 origin-center transition-all duration-700 ease-out ${
-            circleVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+          stroke="var(--color-action-primary)"
+          style={{ opacity: circleVisible ? 0.1 : 0 }}
+          className={`origin-center transition-all duration-700 ease-out ${
+            circleVisible ? 'scale-100' : 'scale-0'
           }`}
           strokeWidth="0.5"
           strokeDasharray="4,4"
@@ -122,9 +137,10 @@ export const RadarChart: React.FC<RadarChartProps> = ({ data, maxVal = 100, onLa
             key={`grid-${level}`}
             points={getGridPoints(level)}
             fill="none"
-            stroke="currentColor"
-            className={`text-slate-700/40 origin-center transition-all duration-500 ease-out ${
-              gridVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+            stroke="var(--color-border)"
+            style={{ opacity: gridVisible ? 0.4 : 0 }}
+            className={`origin-center transition-all duration-500 ease-out ${
+              gridVisible ? 'scale-100' : 'scale-0'
             }`}
             strokeWidth="0.75"
           />
@@ -142,22 +158,27 @@ export const RadarChart: React.FC<RadarChartProps> = ({ data, maxVal = 100, onLa
               y1={cy}
               x2={x}
               y2={y}
-              stroke="currentColor"
-              className={`text-slate-700/40 origin-center transition-all duration-500 ease-out ${
-                gridVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+              stroke="var(--color-border)"
+              style={{ opacity: gridVisible ? 0.4 : 0 }}
+              className={`origin-center transition-all duration-500 ease-out ${
+                gridVisible ? 'scale-100' : 'scale-0'
               }`}
               strokeWidth="0.75"
             />
           )
         })}
 
-        {/* Data Area Polygon */}
+        {/* Data Area Polygon - Fades in during 'value' phase */}
         <polygon
           points={pointsStr}
-          fill="rgba(168, 85, 247, 0.25)"
-          stroke="rgba(168, 85, 247, 0.85)"
-          strokeWidth="2"
+          style={{
+            fill: 'var(--color-action-primary)',
+            stroke: 'var(--color-action-primary)',
+            fillOpacity: animationPhase === 'value' ? 0.25 : 0,
+            strokeOpacity: animationPhase === 'value' ? 0.85 : 0,
+          }}
           className="transition-all duration-700 ease-out"
+          strokeWidth="2"
         />
 
         {/* Data Corner Indicators (dots) */}
@@ -174,7 +195,12 @@ export const RadarChart: React.FC<RadarChartProps> = ({ data, maxVal = 100, onLa
               cy={y}
               r="3.5"
               onClick={() => onLabelClick?.(d.id)}
-              className="fill-purple-400 stroke-purple-600 cursor-pointer transition-all duration-700 ease-out"
+              style={{
+                fill: 'var(--color-action-primary)',
+                stroke: 'var(--color-surface)',
+                opacity: animationPhase === 'points' || animationPhase === 'value' ? 1 : 0,
+              }}
+              className="cursor-pointer transition-all duration-700 ease-out"
               strokeWidth="1.5"
             />
           )
@@ -200,7 +226,10 @@ export const RadarChart: React.FC<RadarChartProps> = ({ data, maxVal = 100, onLa
               y={y}
               textAnchor={textAnchor}
               onClick={() => onLabelClick?.(d.id)}
-              className={`fill-slate-300 text-[11px] font-medium cursor-pointer select-none hover:fill-purple-400 transition-all duration-500 ease-out ${
+              style={{
+                fill: 'var(--color-text-muted)',
+              }}
+              className={`text-[11px] font-medium cursor-pointer select-none hover:!fill-[var(--color-action-primary)] transition-all duration-500 ease-out ${
                 gridVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
               }`}
             >

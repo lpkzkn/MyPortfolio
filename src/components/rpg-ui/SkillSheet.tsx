@@ -1,5 +1,4 @@
-import type React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { techStackData } from '../../data/tech-stack'
 import type { TechNode } from '../../types/tech-stack'
 import { RadarChart } from './RadarChart'
@@ -32,43 +31,76 @@ export const SkillSheet: React.FC = () => {
     }
   }
 
-  const handleBackClick = () => {
-    if (history.length > 0) {
-      const newHistory = [...history]
-      const prev = newHistory.pop() || null
-      setHistory(newHistory)
-      setActiveNode(prev)
-    } else {
-      setActiveNode(null)
+  const handleBreadcrumbClick = (node: TechNode | null, index: number) => {
+    if (node === activeNode) return
+    const newHistory = history.slice(0, index)
+    setHistory(newHistory)
+    setActiveNode(node)
+  }
+
+  // Generate breadcrumb path
+  const getBreadcrumbs = () => {
+    const path: { name: string; node: TechNode | null }[] = [{ name: '全体ステータス', node: null }]
+    for (let i = 0; i < history.length; i++) {
+      const hNode = history[i]
+      if (hNode) {
+        path.push({ name: hNode.name, node: hNode })
+      }
     }
+    if (activeNode) {
+      path.push({ name: activeNode.name, node: activeNode })
+    }
+    return path
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-6 bg-slate-950 border-4 border-double border-purple-900/50 rounded-xl font-mono text-slate-100 shadow-[0_0_30px_rgba(168,85,247,0.1)]">
+    <div className="w-full max-w-4xl mx-auto p-6 bg-surface border-4 border-double border-action-primary/30 rounded-xl font-mono text-text-default shadow-sm transition-all duration-300">
       {/* Title Header */}
-      <div className="text-center mb-8 border-b-4 border-double border-purple-900/30 pb-4">
-        <h2 className="text-xl md:text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-300 drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">
-          CHARACTER ABILITY STATUS
+      <div className="text-center mb-6 border-b border-border pb-4">
+        <h2 className="text-xl md:text-2xl font-bold tracking-widest text-action-primary drop-shadow-[0_0_8px_var(--color-action-primary)]">
+          能力ステータス
         </h2>
-        <p className="text-xs text-slate-400 mt-1 uppercase tracking-wider">
-          Anonymized developer tech-stack parameters
+        <p className="text-xs text-text-muted mt-1 uppercase tracking-wider">
+          一般化された技術スタックパラメータ
         </p>
+      </div>
+
+      {/* Breadcrumbs */}
+      <div className="flex flex-wrap items-center justify-center gap-1.5 text-xs text-text-muted mb-6">
+        {getBreadcrumbs().map((bc, idx, arr) => (
+          <React.Fragment key={bc.node ? bc.node.id : 'root'}>
+            {idx > 0 && <span className="text-border">/</span>}
+            <button
+              type="button"
+              onClick={() => handleBreadcrumbClick(bc.node, idx)}
+              className={`hover:text-action-primary transition-colors cursor-pointer ${
+                idx === arr.length - 1 ? 'text-action-primary font-bold' : ''
+              }`}
+            >
+              {bc.name}
+            </button>
+          </React.Fragment>
+        ))}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         {/* Left Side: Radar Chart */}
-        <div className="md:col-span-5 flex flex-col items-center justify-center bg-slate-900/40 p-4 rounded-lg border border-slate-800">
+        <div className="md:col-span-5 flex flex-col items-center justify-center bg-surface-subtle p-4 rounded-lg border border-border">
           {chartData.length > 0 ? (
-            <RadarChart data={chartData} onLabelClick={handleLabelClick} />
+            <RadarChart
+              key={activeNode ? activeNode.id : 'root'}
+              data={chartData}
+              onLabelClick={handleLabelClick}
+            />
           ) : (
-            <div className="w-full max-w-[300px] aspect-square flex items-center justify-center border border-slate-800 rounded bg-slate-950/50 text-slate-500">
+            <div className="w-full max-w-[300px] aspect-square flex items-center justify-center border border-border rounded bg-surface text-text-muted">
               No Data Available
             </div>
           )}
-          <p className="text-[10px] text-slate-500 mt-2 text-center">
+          <p className="text-[10px] text-text-muted mt-2 text-center">
             {activeNode
-              ? '* Click sub-categories to explore (if expandable)'
-              : '* Click major categories to drill down'}
+              ? '* 下位項目をクリックしてさらに探索'
+              : '* 項目名をクリックしてドリルダウン'}
           </p>
         </div>
 
@@ -78,7 +110,6 @@ export const SkillSheet: React.FC = () => {
             activeNode={activeNode}
             rootNodes={techStackData}
             onItemClick={handleItemClick}
-            onBackClick={handleBackClick}
           />
         </div>
       </div>

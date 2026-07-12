@@ -25,7 +25,7 @@
   - _Depends: 2_
   - _Boundary: RadarChart_
 
-- [ ] 4. StatusPanelコンポーネントの実装 (P)
+- [x] 4. StatusPanelコンポーネントの実装 (P)
   - `src/components/rpg-ui/StatusPanel.tsx` を作成し、選択されたカテゴリの詳細情報をRPGステータス画面風のリストレイアウトで表示する。
   - Observable: プロパティとして渡したデータが、RPG風の装飾枠やフォントスタイルで正しく表示されること。
   - _Requirements: 1, 3_

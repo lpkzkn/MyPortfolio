@@ -31,7 +31,7 @@
   - _Requirements: 1, 3_
   - _Boundary: StatusPanel_
 
-- [ ] 5. SkillSheet統合とドリルダウン状態管理の実装
+- [x] 5. SkillSheet統合とドリルダウン状態管理の実装
   - `src/components/rpg-ui/SkillSheet.tsx` を作成し、`activeCategoryId` の状態（State）を管理する。
   - `RadarChart` と `StatusPanel` を内包し、クリックイベントに応じて表示するカテゴリ階層（大項目→中項目など）を切り替えるドリルダウンを実装する。
   - データの匿名化方針に則り、実名を出さないUI構成を保証する。

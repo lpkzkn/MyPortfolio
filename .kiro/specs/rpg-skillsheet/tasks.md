@@ -7,7 +7,7 @@
   - _Requirements: 1, 3_
   - _Boundary: Data Layer_
 
-- [ ] 2. RadarChartコンポーネントの基本描画実装 (P)
+- [x] 2. RadarChartコンポーネントの基本描画実装 (P)
   - `src/components/rpg-ui/RadarChart.tsx` を作成する。
   - 三角関数を用いてデータを多角形の頂点座標に変換し、`<svg>`タグ内で `<polygon>` や軸線を描画するロジックを実装する。
   - Observable: 静的なレーダーチャートがブラウザ上で描画されること。

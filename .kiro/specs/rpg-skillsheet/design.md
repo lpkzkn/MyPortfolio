@@ -17,7 +17,7 @@
 ## Boundary Commitments
 
 ### This Spec Owns
-- スキルデータの型定義と静的データの実装 (`src/data/skills.ts`)
+- スキルデータの型定義と静的データの実装 (`src/data/tech-stack.ts`)
 - RPG風パラメータ表示のレイアウト・UIコンポーネント
 - アニメーション付きSVGレーダーチャートコンポーネント
 - クリックによるドリルダウン（階層展開）の状態管理
@@ -62,18 +62,18 @@ src/
 │       ├── RadarChart.tsx        # SVGによるレーダーチャート描画（再利用可能）
 │       └── StatusPanel.tsx       # RPG風ステータス詳細（テキスト一覧）
 ├── data/
-│   └── skills.ts                 # スキルツリーの静的データ
+│   └── tech-stack.ts             # 技術スタックの静的データ
 └── types/
-    └── skill.ts                  # スキルデータの型定義
+    └── tech-stack.ts             # 技術データの型定義
 ```
 
 ## Requirements Traceability
 
 | Requirement | Summary | Components | Interfaces | Flows |
 |-------------|---------|------------|------------|-------|
-| 1 | RPG風パラメータ表示 | `SkillSheet`, `StatusPanel` | `skill.ts` | ページ読み込み時 |
+| 1 | RPG風パラメータ表示 | `SkillSheet`, `StatusPanel` | `tech-stack.ts` | ページ読み込み時 |
 | 2 | アニメーション付きレーダーチャート | `RadarChart` | `RadarChartProps` | 画面侵入時にIntersectionObserver検知 |
-| 3 | インタラクティブなスキルのドリルダウン表示 | `SkillSheet`, `RadarChart` | `skill.ts`階層データ | 大項目クリック時展開 |
+| 3 | インタラクティブなスキルのドリルダウン表示 | `SkillSheet`, `RadarChart` | `tech-stack.ts`階層データ | 大項目クリック時展開 |
 
 ## Components and Interfaces
 
@@ -94,7 +94,10 @@ src/
 
 **Responsibilities & Constraints**
 - 受け取ったデータ配列をもとに、多角形（Polygon）の各頂点を三角関数で計算して描画する。
-- 初回表示時およびデータ変更時に、パスをアニメーションさせる（CSSトランジションを利用）。
+- 画面侵入時やデータ変更時に、以下の順序でシーケンシャルに描画アニメーションを実行する（CSSやReactの状態管理を利用）：
+  1. 背景となる円（枠）が浮かび上がる/広がる
+  2. レーダーの軸や罫線が描画される
+  3. 実際のスキルの値（多角形）が中心から滑らかに広がる
 - 軸のラベルを描画し、クリックイベントを親コンポーネントに伝播させる。
 
 **Dependencies**
@@ -138,17 +141,17 @@ interface RadarChartProps {
 ## Data Models
 
 ### Domain Model
-- **SkillNode**: スキルのツリー構造を表す。ID、表示名、スコア、そして任意で子ノード（`children`）を持つ。
+- **TechNode**: 技術スタックのツリー構造を表す。ID、表示名、スコア、そして任意で子ノード（`children`）を持つ。
 
 ### Logical Data Model
 
 **Structure Definition**:
 ```typescript
-export interface SkillNode {
+export interface TechNode {
   id: string;
   name: string;
   score: number; // 0 ~ 100
-  children?: SkillNode[];
+  children?: TechNode[];
 }
 ```
 

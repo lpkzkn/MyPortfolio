@@ -15,6 +15,7 @@ export const techStackData: TechNode[] = [
           { id: 'vuejs', name: 'VueJS', score: 85 },
           { id: 'typescript', name: 'TypeScript', score: 92 },
           { id: 'tailwind', name: 'Tailwind CSS', score: 90 },
+          { id: 'seo-tech', name: 'SEO (セマンティック / SSR最適化)', score: 85 },
         ],
       },
       {

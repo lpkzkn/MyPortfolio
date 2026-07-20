@@ -5,7 +5,14 @@
  * ここに1行追加するだけで、テーマ切り替えUI（ThemeSwitcher）の選択肢にも
  * 型安全に反映される。
  */
-export const THEMES = ['light', 'happy-orange', 'gaming-red', 'sakura-pink'] as const
+export const THEMES = [
+  'light',
+  'dark',
+  'blue-ocean',
+  'happy-orange',
+  'gaming-red',
+  'sakura-pink',
+] as const
 
 export type Theme = (typeof THEMES)[number]
 
@@ -13,6 +20,8 @@ export const DEFAULT_THEME: Theme = 'light'
 
 export const THEME_LABELS: Record<Theme, string> = {
   light: 'Light',
+  dark: 'Dark',
+  'blue-ocean': 'Blue Ocean',
   'happy-orange': 'Happy Orange',
   'gaming-red': 'Gaming Red',
   'sakura-pink': 'Sakura Pink',

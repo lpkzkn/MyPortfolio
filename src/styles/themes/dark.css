@@ -1,0 +1,19 @@
+/*
+ * dark テーマ
+ */
+[data-theme="dark"] {
+  --color-surface: #0a0e17;
+  --color-surface-subtle: #161b26;
+  --color-border: #2d3748;
+
+  --color-text-default: #f7fafc;
+  --color-text-muted: #a0aec0;
+  --color-text-on-action: #ffffff;
+
+  --color-action-primary: #38bdf8;
+  --color-action-primary-hover: #0ea5e9;
+  --color-action-secondary: #2d3748;
+  --color-action-secondary-hover: #4a5568;
+  --color-action-danger: #ef4444;
+  --color-action-danger-hover: #dc2626;
+}

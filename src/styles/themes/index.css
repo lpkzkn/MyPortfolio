@@ -4,6 +4,8 @@
  * （lib/theme.ts の THEMES 配列への追加もあわせて必要）
  */
 @import "./light.css";
+@import "./dark.css";
+@import "./blue-ocean.css";
 @import "./happy-orange.css";
 @import "./gaming-red.css";
 @import "./sakura-pink.css";

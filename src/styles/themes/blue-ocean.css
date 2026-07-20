@@ -1,0 +1,19 @@
+/*
+ * blue-ocean テーマ
+ */
+[data-theme="blue-ocean"] {
+  --color-surface: #031b33;
+  --color-surface-subtle: #062c54;
+  --color-border: #1e4e7c;
+
+  --color-text-default: #e5f1fc;
+  --color-text-muted: #84a9c8;
+  --color-text-on-action: #ffffff;
+
+  --color-action-primary: #00e5ff;
+  --color-action-primary-hover: #00b8cc;
+  --color-action-secondary: #0b3c68;
+  --color-action-secondary-hover: #124b7f;
+  --color-action-danger: #ff4d6d;
+  --color-action-danger-hover: #e63956;
+}

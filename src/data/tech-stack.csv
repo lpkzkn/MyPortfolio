@@ -7,9 +7,9 @@ typescript,fe-web,TypeScript,92,
 tailwind,fe-web,Tailwind CSS,90,
 seo-tech,fe-web,Webアプリ最適化,85,Next.jsやCore Web Vitalsを意識した、セマンティックで高速なフロントエンドの最適化実装
 fe-mobile,frontend,モバイルアプリ開発,90,
-react-native,fe-mobile,React-Native,92,
-flutter,fe-mobile,Flutter,70,
-mobile-native,fe-mobile,iOS / Android ネイティブ,75,Swift/Kotlin等を用いた、OS固有機能との連携やネイティブ機能の追加実装
+react-native,fe-mobile,React-Native,92,少しでもWeb版を考えているときよく採用します
+flutter,fe-mobile,Flutter,70,React-Nativeよりもパフォーマンス良いのでiOS / Androidだけならよく採用します
+mobile-native,fe-mobile,iOS / Android ネイティブ,75,"それぞれに担当（チーム）があったり、OS独自のUIなどを尊重する場合、よく採用します"
 webview-integration,fe-mobile,WebView 連携,85,Webサービスをベースとしたアプリ化において、アプリ内課金やプッシュ通知などのネイティブ機能をWebView連携で実現する設計・実装経験
 fe-game,frontend,ゲーム開発,60,
 unity,fe-game,Unity,60,

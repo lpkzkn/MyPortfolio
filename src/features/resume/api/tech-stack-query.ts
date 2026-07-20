@@ -1,7 +1,5 @@
-import * as fs from 'node:fs'
-import path from 'node:path'
-import { createServerFn } from '@tanstack/react-start'
 import type { TechNode } from '~/types/tech-stack'
+import csvContent from '../../../data/tech-stack.csv?raw'
 
 function parseCSVLine(line: string): string[] {
   const result: string[] = []
@@ -22,86 +20,82 @@ function parseCSVLine(line: string): string[] {
   return result
 }
 
-export const getTechStack = createServerFn({ method: 'GET' }).handler(
-  async (): Promise<TechNode[]> => {
-    const csvPath = path.resolve(process.cwd(), 'src/data/tech-stack.csv')
-    const csvContent = fs.readFileSync(csvPath, 'utf-8')
-    const lines = csvContent.split(/\r?\n/).filter((line) => line.trim() !== '')
+export function getTechStack(): TechNode[] {
+  const lines = csvContent.split(/\r?\n/).filter((line) => line.trim() !== '')
 
-    // Skip header line
-    const dataLines = lines.slice(1)
+  // Skip header line
+  const dataLines = lines.slice(1)
 
-    interface FlatNode {
-      id: string
-      parentId: string
-      name: string
-      score: number
-      comment?: string
-    }
+  interface FlatNode {
+    id: string
+    parentId: string
+    name: string
+    score: number
+    comment?: string
+  }
 
-    const flatNodes: FlatNode[] = dataLines
-      .map((line) => {
-        const [id, parentId, name, scoreStr, comment] = parseCSVLine(line)
-        return {
-          id: id || '',
-          parentId: parentId || '',
-          name: name || '',
-          score: Number.parseInt(scoreStr || '0', 10),
-          comment: comment || undefined,
-        }
-      })
-      .filter((node) => node.id !== '')
+  const flatNodes: FlatNode[] = dataLines
+    .map((line) => {
+      const [id, parentId, name, scoreStr, comment] = parseCSVLine(line)
+      return {
+        id: id || '',
+        parentId: parentId || '',
+        name: name || '',
+        score: Number.parseInt(scoreStr || '0', 10),
+        comment: comment || undefined,
+      }
+    })
+    .filter((node) => node.id !== '')
 
-    // Build hierarchical tree structure
-    const nodeMap = new Map<string, TechNode & { parentId: string }>()
+  // Build hierarchical tree structure
+  const nodeMap = new Map<string, TechNode & { parentId: string }>()
 
-    // Initial pass: create all nodes
-    for (const item of flatNodes) {
-      nodeMap.set(item.id, {
-        id: item.id,
-        name: item.name,
-        score: item.score,
-        parentId: item.parentId,
-        comment: item.comment,
-        children: [],
-      })
-    }
+  // Initial pass: create all nodes
+  for (const item of flatNodes) {
+    nodeMap.set(item.id, {
+      id: item.id,
+      name: item.name,
+      score: item.score,
+      parentId: item.parentId,
+      comment: item.comment,
+      children: [],
+    })
+  }
 
-    const roots: TechNode[] = []
+  const roots: TechNode[] = []
 
-    // Second pass: establish parent-child relationships
-    for (const node of nodeMap.values()) {
-      if (node.parentId === '') {
-        roots.push(node)
+  // Second pass: establish parent-child relationships
+  for (const node of nodeMap.values()) {
+    if (node.parentId === '') {
+      roots.push(node)
+    } else {
+      const parent = nodeMap.get(node.parentId)
+      if (parent) {
+        parent.children = parent.children || []
+        parent.children.push(node)
       } else {
-        const parent = nodeMap.get(node.parentId)
-        if (parent) {
-          parent.children = parent.children || []
-          parent.children.push(node)
-        } else {
-          roots.push(node)
-        }
+        roots.push(node)
       }
     }
+  }
 
-    // Clean up empty children arrays to match TechNode interface
-    const cleanTree = (nodes: TechNode[]): TechNode[] => {
-      return nodes.map((n) => {
-        const cleaned: TechNode = {
-          id: n.id,
-          name: n.name,
-          score: n.score,
-        }
-        if (n.comment) {
-          cleaned.comment = n.comment
-        }
-        if (n.children && n.children.length > 0) {
-          cleaned.children = cleanTree(n.children)
-        }
-        return cleaned
-      })
-    }
+  // Clean up empty children arrays to match TechNode interface
+  const cleanTree = (nodes: TechNode[]): TechNode[] => {
+    return nodes.map((n) => {
+      const cleaned: TechNode = {
+        id: n.id,
+        name: n.name,
+        score: n.score,
+      }
+      if (n.comment) {
+        cleaned.comment = n.comment
+      }
+      if (n.children && n.children.length > 0) {
+        cleaned.children = cleanTree(n.children)
+      }
+      return cleaned
+    })
+  }
 
-    return cleanTree(roots)
-  },
-)
+  return cleanTree(roots)
+}

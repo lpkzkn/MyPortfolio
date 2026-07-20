@@ -14,8 +14,10 @@ flutter,fe-mobile,Flutter,70,React-Nativeよりもパフォーマンス良いの
 mobile-native,fe-mobile,iOS / Android ネイティブ,75,"それぞれに担当（チーム）があったり、OS独自のUIなどを尊重する場合、よく採用します"
 webview-integration,fe-mobile,WebView 連携,85,Webサービスをベースとしたアプリ化において、アプリ内課金やプッシュ通知などのネイティブ機能をWebView連携で実現する設計・実装経験
 fe-game,frontend,ゲーム開発,70,
-out-game-dev,fe-game,アウトゲーム UI/UX,90,UnityやCocos-2dを用いた、ガチャ・ステータス・ショップ画面等の高度なUI/UXアニメーションや進行システムの構築
-in-game-dev,fe-game,インゲーム開発,50,Unity等を用いた基本的なゲームループ、キャラクターの移動や当たり判定等のコアロジック実装
+unity,fe-game,Unity,60,メインで使用。C#を用いたインゲーム・アウトゲームのコンポーネント開発経験
+cocos-2d,fe-game,Cocos-2d,40,JavaScript/TypeScriptを用いた2Dブラウザゲーム・ハイブリッドアプリの開発経験
+out-game-dev,fe-game,アウトゲーム UI/UX,90,ガチャ・ステータス・ショップ画面等の高度なUI/UXアニメーションや進行システムの構築
+in-game-dev,fe-game,インゲーム開発,50,基本的なゲームループ、キャラクターの移動や当たり判定等のコアロジック実装
 fe-native-lang,frontend,ネイティブ言語・プラットフォーム,85,
 swift,fe-native-lang,Swift,75,
 objective-c,fe-native-lang,Objective-C,50,

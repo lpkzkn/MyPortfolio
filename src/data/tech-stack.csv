@@ -33,19 +33,17 @@ nodejs-backend,backend,Node.js,60,Express等を用いた基本的なAPIサーバ
 docker,backend,Docker,50,ローカル開発環境の構築やコンテナ化など、Dockerの基本的な操作・運用
 database,backend,データベース知識,30,RDBやDocumentDB（MongoDB等）の特徴の違いや、基本的な用途の概念的理解
 infrastructure,,インフラ・クラウド,33,
-infra-cloud,infrastructure,クラウドインフラ,60,
-gcp-run-logging,infra-cloud,GCP (Cloud Run / Logging),60,Cloud Runへのデプロイ・運用経験や、Cloud Loggingを用いた本番環境の監視とログ調査
-firebase,infra-cloud,Firebase,65,Firebase Auth / Firestore / Cloud Messaging等を用いたモバイル・Webのバックエンド連携
-infra-networking,infrastructure,ネットワーク・認証,75,
-networking-domain,infra-networking,ドメイン / Cookie / 認証,75,DNS・ドメイン設定、CORS等のドメイン制約対応、セキュアなCookie共有や認証設計
-infra-analytics-sdk,infrastructure,計測・分析・オブザーバビリティ,75,
-bigquery,infra-analytics-sdk,BigQuery,60,BigQueryを用いたログデータやユーザー行動データの抽出・簡単な分析
-google-analytics,infra-analytics-sdk,Google Analytics / GTM,80,GA4のイベント設計や、Google Tag Managerを用いた各種タグ・計測タグの埋め込みと管理
-crashlytics,infra-analytics-sdk,Firebase Crashlytics,90,Crashlyticsを用いたモバイルアプリのリアルタイムクラッシュ監視と原因調査
-sentry,infra-analytics-sdk,Sentry,85,Sentryを用いたフロントエンド・Webアプリのリアルタイムエラー監視とスタックトレースによる調査
-newrelic,infra-analytics-sdk,New Relic,70,New Relicを用いた分散トレーシングによる、システム全体のパフォーマンス監視とボトルネック特定
-appsflyer,infra-analytics-sdk,AppsFlyer / Adjust,85,
-googlemap-sdk,infra-analytics-sdk,GoogleMapSDK 連携,85,
+gcp-run-logging,infrastructure,GCP (Cloud Run / Logging),60,Cloud Runへのデプロイ・運用経験や、Cloud Loggingを用いた本番環境の監視とログ調査
+firebase,infrastructure,Firebase,65,Firebase Auth / Firestore / Cloud Messaging等を用いたモバイル・Webのバックエンド連携
+networking-domain,infrastructure,ドメイン / Cookie / 認証,75,DNS・ドメイン設定、CORS等のドメイン制約対応、セキュアなCookie共有や認証設計
+analytics-observability,,計測・分析・オブザーバビリティ,80,
+bigquery,analytics-observability,BigQuery,60,BigQueryを用いたログデータやユーザー行動データの抽出・簡単な分析
+google-analytics,analytics-observability,Google Analytics / GTM,80,GA4のイベント設計や、Google Tag Managerを用いた各種タグ・計測タグの埋め込みと管理
+crashlytics,analytics-observability,Firebase Crashlytics,90,Crashlyticsを用いたモバイルアプリのリアルタイムクラッシュ監視と原因調査
+sentry,analytics-observability,Sentry,85,Sentryを用いたフロントエンド・Webアプリのリアルタイムエラー監視とスタックトレースによる調査
+newrelic,analytics-observability,New Relic,70,New Relicを用いた分散トレーシングによる、システム全体のパフォーマンス監視とボトルネック特定
+appsflyer,analytics-observability,AppsFlyer / Adjust,85,
+googlemap-sdk,analytics-observability,GoogleMapSDK 連携,85,
 process,,プロセス・品質,80,
 proc-testing,process,自動テスト・品質保証,88,
 playwright,proc-testing,Playwright,90,WebアプリのE2Eテスト自動化環境の設計・構築・運用経験

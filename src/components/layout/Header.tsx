@@ -4,7 +4,7 @@ import { ThemeSwitcher } from '~/features/theme/ThemeSwitcher'
 const NAV_ITEMS = [
   { to: '/', label: 'Top' },
   { to: '/resume', label: '経歴・実績' },
-  { to: '/works', label: '実績紹介' },
+  { to: '/works', label: '制作物' },
   { to: '/catalog', label: 'デザインシステム' },
   { to: '/about-this-site', label: 'このサイトについて' },
 ] as const

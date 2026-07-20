@@ -15,7 +15,8 @@ function HomePage() {
         ポートフォリオサイトです
       </h1>
       <p className="mt-6 max-w-2xl text-body text-text-muted">
-        TanStack Start・Tailwind CSS・cvaを用いて構築しています。右上のテーマ切り替えから、
+        React 19・TanStack Start・Tailwind CSS v4
+        などの最先端の技術スタックを用いて構築したモダンなサイトです。右上のテーマ切り替えから、
         見た目のバリエーションを試せます。
       </p>
       <div className="mt-8 flex gap-4">

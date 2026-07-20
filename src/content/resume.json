@@ -84,7 +84,7 @@
   "projects": [
     {
       "title": "My Portfolio",
-      "description": "本ポートフォリオサイト。React 19, TanStack Router, Tailwind CSS v4 などの最新スタックを用い、GitHub Pages 向けに完全 SSG する極小アーキテクチャで構築しています。",
+      "description": "React 19・TanStack Start・Tailwind CSS v4 などの最先端の技術スタックを用いた、モダンでテーマ切り替え可能なデザインシステムを持つポートフォリオサイト。GitHub Pages 向けに完全 SSG するアーキテクチャで構築しています。",
       "tech": ["React 19", "TanStack Router", "Tailwind CSS v4"],
       "github": "https://github.com/lpkzkn/MyPortfolio"
     },

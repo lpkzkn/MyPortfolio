@@ -1,0 +1,67 @@
+id,parentId,name,score,comment
+frontend,,フロントエンド,95,
+fe-web,frontend,Webアプリ開発,92,
+react,fe-web,React / Next.js,95,現在の開発の主力。これまで多様なフロントエンド・クライアント開発を経験した上で、最後のピースとして行き着いたスタック。
+vuejs,fe-web,VueJS,60,過去にUnity×WebView構成のWebフロントエンドで採用。Vue.js公式のスタイルガイドなど、整備されたマニュアルや規律に沿った開発を好みます。
+typescript,fe-web,TypeScript,92,
+tailwind,fe-web,Tailwind CSS,90,直近は開発効率化のために採用。CSS設計やスタイリング本来の柔軟性を活かしたピュアなCSS実装も好みます。
+seo-tech,fe-web,SEO,85,SEOやCore Web Vitalsを意識した、セマンティックで検索エンジンに強いマークアップ実装
+performance,fe-web,Performance,85,Core Web Vitalsのボトルネック計測や、描画速度（LCP/INP）の改善・最適化
+tanstack,fe-web,TanStack,90,"Next.jsとは対照的な「クライアント起点でサーバー（SSR/Start）へアプローチする」思想に着目。本サイトもこれで作成。"
+fe-mobile,frontend,モバイルアプリ開発,90,
+react-native,fe-mobile,React-Native,92,少しでもWeb版を考えているときよく採用します
+flutter,fe-mobile,Flutter,70,React-Nativeよりもパフォーマンス良いのでiOS / Androidだけならよく採用します
+mobile-native,fe-mobile,iOS / Android ネイティブ,75,"それぞれに担当（チーム）があったり、OS独自のUIなどを尊重する場合、よく採用します"
+webview-integration,fe-mobile,WebView 連携,85,Webサービスをベースとしたアプリ化において、アプリ内課金やプッシュ通知などのネイティブ機能をWebView連携で実現する設計・実装経験
+fe-game,frontend,ゲーム開発,60,
+unity,fe-game,Unity,60,
+cocos-2d,fe-game,Cocos-2d,40,
+fe-native-lang,frontend,ネイティブ言語・プラットフォーム,85,
+swift,fe-native-lang,Swift,75,
+objective-c,fe-native-lang,Objective-C,50,
+kotlin,fe-native-lang,Kotlin,75,ExpoやReact Nativeのネイティブブリッジ記述が可能
+java,fe-native-lang,Java,50,Android開発での長い経験あり、保守・移行に対応可能
+csharp,fe-native-lang,C#,75,
+cpp,fe-native-lang,C++,50,
+fe-design,frontend,デザイン,80,
+design-system,fe-design,DesignSystem,85,
+figma,fe-design,Figma,80,
+storybook,fe-design,Storybook,85,
+backend,,バックエンド,35,
+be-dev,backend,サーバー・API開発,70,
+api-design,be-dev,API設計 / OpenAPI,90,OpenAPI（Swagger）等を用いたスキーマ駆動開発や、フロントと連携しやすいAPI設計
+docker,be-dev,Docker,50,ローカル開発環境の構築やコンテナ化など、Dockerの基本的な操作・運用
+be-database,backend,データベース,50,
+db-query-basic,be-database,SQLデータ操作,50,基本的なSQLクエリを用いたデータ抽出や、簡単なテーブル設計・構造の理解
+infrastructure,,インフラ・クラウド,33,
+infra-cloud,infrastructure,クラウドインフラ,60,
+gcp-run-logging,infra-cloud,GCP (Cloud Run / Logging),60,Cloud Runへのデプロイ・運用経験や、Cloud Loggingを用いた本番環境の監視とログ調査
+firebase,infra-cloud,Firebase,65,Firebase Auth / Firestore / Cloud Messaging等を用いたモバイル・Webのバックエンド連携
+infra-networking,infrastructure,ネットワーク・認証,75,
+networking-domain,infra-networking,ドメイン / Cookie / 認証,75,DNS・ドメイン設定、CORS等のドメイン制約対応、セキュアなCookie共有や認証設計
+infra-analytics-sdk,infrastructure,計測・分析・オブザーバビリティ,75,
+bigquery,infra-analytics-sdk,BigQuery,60,BigQueryを用いたログデータやユーザー行動データの抽出・簡単な分析
+google-analytics,infra-analytics-sdk,Google Analytics / GTM,80,GA4のイベント設計や、Google Tag Managerを用いた各種タグ・計測タグの埋め込みと管理
+crashlytics,infra-analytics-sdk,Firebase Crashlytics,90,Crashlyticsを用いたモバイルアプリのリアルタイムクラッシュ監視と原因調査
+sentry,infra-analytics-sdk,Sentry,85,Sentryを用いたフロントエンド・Webアプリのリアルタイムエラー監視とスタックトレースによる調査
+newrelic,infra-analytics-sdk,New Relic,70,New Relicを用いた分散トレーシングによる、システム全体のパフォーマンス監視とボトルネック特定
+appsflyer,infra-analytics-sdk,AppsFlyer / Adjust,85,
+googlemap-sdk,infra-analytics-sdk,GoogleMapSDK 連携,85,
+process,,プロセス・品質,80,
+proc-testing,process,自動テスト・品質保証,88,
+playwright,proc-testing,Playwright,90,WebアプリのE2Eテスト自動化環境の設計・構築・運用経験
+magic-pod,proc-testing,Magic Pod,80,Magic Pod（SaaS）を活用した、Web・モバイルアプリの効率的なテスト運用経験
+appium,proc-testing,Appium,75,Appiumを用いたモバイルアプリ（iOS/Android）のテスト自動化経験
+bdd,proc-testing,BDD (振る舞い駆動開発),85,
+jest,proc-testing,Jest,85,JavaScript/TypeScriptプロジェクトにおける単体・結合テストの実装
+static-analysis,proc-testing,静的解析 (Linter),85,Biomeやmarkuplint、TSLint等を用いたコード規律の統一とマークアップの品質向上
+proc-ci-delivery,process,CI/CD & デリバリー,85,
+github-actions,proc-ci-delivery,GitHub Actions,90,GitHub Actionsを用いたCI/CDパイプライン（ビルド・テスト・デプロイの自動化）の設計・構築・保守
+jenkins,proc-ci-delivery,Jenkins,75,Jenkinsを用いたオンプレミス/サーバー環境におけるビルドパイプラインの構築・運用管理
+store-delivery,proc-ci-delivery,App Store / Google Play配信,95,App Store ConnectおよびGoogle Play Consoleを用いた、アプリの署名・ビルド・リリース・配信管理の実務経験
+runtimes,proc-ci-delivery,Node.js / Bun,80,BunやNode.jsをパッケージマネージャー・ビルド環境として活用した開発環境の最適化
+ai,,AI・エージェント,70,
+ai-agentic,ai,エージェント志向開発,90,
+agentic-coding,ai-agentic,Agentic Coding,90,
+agent-skill,ai-agentic,Agent SKILL,85,
+sdd,ai-agentic,SDD (仕様駆動開発),95,

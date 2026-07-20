@@ -1,15 +1,22 @@
 import { SkillSheet } from '~/components/rpg-ui'
+import type { TechNode } from '~/types/tech-stack'
 import type { ResumeData } from '../types'
 import { ProjectCard } from './ProjectCard'
 import { Timeline } from './Timeline'
 
 interface ResumeViewProps {
   data: ResumeData
+  techStack: TechNode[]
   activeNodeId?: string
   onChangeActiveNodeId?: (id: string | undefined) => void
 }
 
-export function ResumeView({ data, activeNodeId, onChangeActiveNodeId }: ResumeViewProps) {
+export function ResumeView({
+  data,
+  techStack,
+  activeNodeId,
+  onChangeActiveNodeId,
+}: ResumeViewProps) {
   return (
     <div className="space-y-16">
       {/* Intro Section */}
@@ -28,7 +35,11 @@ export function ResumeView({ data, activeNodeId, onChangeActiveNodeId }: ResumeV
           活かせる経験・知識・技術
         </h2>
         <div className="mt-6">
-          <SkillSheet activeNodeId={activeNodeId} onChangeActiveNodeId={onChangeActiveNodeId} />
+          <SkillSheet
+            techStack={techStack}
+            activeNodeId={activeNodeId}
+            onChangeActiveNodeId={onChangeActiveNodeId}
+          />
         </div>
       </section>
 

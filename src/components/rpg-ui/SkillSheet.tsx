@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
-import { techStackData } from '../../data/tech-stack'
 import type { TechNode } from '../../types/tech-stack'
 import { RadarChart } from './RadarChart'
 import type { RadarChartData } from './RadarChart'
 import { StatusPanel } from './StatusPanel'
 
 interface SkillSheetProps {
+  techStack: TechNode[]
   activeNodeId?: string
   onChangeActiveNodeId?: (id: string | undefined) => void
 }
 
 export const SkillSheet: React.FC<SkillSheetProps> = ({
+  techStack,
   activeNodeId: propActiveNodeId,
   onChangeActiveNodeId,
 }) => {
@@ -52,14 +53,14 @@ export const SkillSheet: React.FC<SkillSheetProps> = ({
     if (!activeNodeId) {
       return { activeNode: null, history: [] }
     }
-    const result = findNodeAndParents(techStackData, activeNodeId)
+    const result = findNodeAndParents(techStack, activeNodeId)
     if (result) {
       return { activeNode: result.node, history: result.parents }
     }
     return { activeNode: null, history: [] }
-  }, [activeNodeId, findNodeAndParents])
+  }, [activeNodeId, findNodeAndParents, techStack])
 
-  const currentNodes = activeNode ? activeNode.children || [] : techStackData
+  const currentNodes = activeNode ? activeNode.children || [] : techStack
 
   const chartData: RadarChartData[] = currentNodes.map((node) => ({
     id: node.id,
@@ -156,7 +157,7 @@ export const SkillSheet: React.FC<SkillSheetProps> = ({
         <div className="md:col-span-7 h-full flex flex-col justify-start">
           <StatusPanel
             activeNode={activeNode}
-            rootNodes={techStackData}
+            rootNodes={techStack}
             onItemClick={handleItemClick}
           />
         </div>

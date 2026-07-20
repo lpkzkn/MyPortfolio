@@ -58,7 +58,6 @@ jenkins,proc-ci-delivery,Jenkins,75,Jenkinsを用いたオンプレミス/サー
 store-delivery,proc-ci-delivery,App Store / Google Play配信,95,App Store ConnectおよびGoogle Play Consoleを用いた、アプリの署名・ビルド・リリース・配信管理の実務経験
 runtimes,proc-ci-delivery,Node.js / Bun,80,BunやNode.jsをパッケージマネージャー・ビルド環境として活用した開発環境の最適化
 ai,,AI・エージェント,70,
-ai-agentic,ai,エージェント志向開発,90,
-agentic-coding,ai-agentic,Agentic Coding,90,
-agent-skill,ai-agentic,Agent SKILL,85,
-sdd,ai-agentic,SDD (仕様駆動開発),95,
+agentic-coding,ai,Agentic Coding,90,
+agent-skill,ai,Agent SKILL,85,
+sdd,ai,SDD (仕様駆動開発),95,

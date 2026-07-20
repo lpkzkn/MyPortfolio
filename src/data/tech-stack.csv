@@ -10,7 +10,7 @@ fe-mobile,frontend,モバイルアプリ開発,90,
 react-native,fe-mobile,React-Native,92,
 flutter,fe-mobile,Flutter,70,
 mobile-native,fe-mobile,iOS / Android ネイティブ,75,Swift/Kotlin等を用いた、OS固有機能との連携やネイティブ機能の追加実装
-webview-integration,fe-mobile,WebView 連携,85,JS Bridgeの設計・実装や、ネイティブとWeb間のセッション連携・通信最適化
+webview-integration,fe-mobile,WebView 連携,85,Webサービスをベースとしたアプリ化において、アプリ内課金やプッシュ通知などのネイティブ機能をWebView連携で実現する設計・実装経験
 fe-game,frontend,ゲーム開発,60,
 unity,fe-game,Unity,60,
 cocos-2d,fe-game,Cocos-2d,40,

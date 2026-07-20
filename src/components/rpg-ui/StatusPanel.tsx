@@ -20,6 +20,13 @@ export const StatusPanel: React.FC<StatusPanelProps> = ({ activeNode, rootNodes,
         </h3>
       </div>
 
+      {/* Flavor text / Comment */}
+      {activeNode?.comment && (
+        <div className="mb-4 p-3 bg-action-primary/5 border border-dashed border-action-primary/20 rounded text-xs text-text-muted italic leading-relaxed">
+          &gt; {activeNode.comment}
+        </div>
+      )}
+
       {/* Nodes List */}
       <div className="space-y-4">
         {currentNodes.map((node) => {

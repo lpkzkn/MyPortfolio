@@ -1,7 +1,6 @@
 import { SkillSheet } from '~/components/rpg-ui'
 import type { TechNode } from '~/types/tech-stack'
 import type { ResumeData } from '../types'
-import { ProjectCard } from './ProjectCard'
 import { Timeline } from './Timeline'
 
 interface ResumeViewProps {
@@ -61,18 +60,6 @@ export function ResumeView({
           職務経歴
         </h2>
         <Timeline companies={data.companies} />
-      </section>
-
-      {/* Projects Section */}
-      <section>
-        <h2 className="text-heading font-bold text-text-default mb-8 pl-2 border-l-4 border-action-primary">
-          プロジェクト実績
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {data.projects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
-          ))}
-        </div>
       </section>
     </div>
   )

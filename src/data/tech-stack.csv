@@ -27,17 +27,18 @@ fe-design,frontend,デザイン,80,
 design-system,fe-design,DesignSystem,85,
 figma,fe-design,Figma,80,
 storybook,fe-design,Storybook,85,
-backend,,バックエンド,50,
-be-api,backend,サーバー開発（サポート程度）,25,
-nodejs-basic,be-api,Node.js 基礎知識,30,
-api-integration,be-api,Web API連携開発,40,
-be-db,backend,データベース操作,15,
-db-query-basic,be-db,SQLクエリ基本操作,25,
-infrastructure,,インフラ・クラウド,20,
-infra-cloud,infrastructure,クラウド・モバイルバックエンド,30,
-gcp-cloudrun,infra-cloud,GCP / CloudRun 運用経験,35,
-firebase,infra-cloud,Firebase (Auth/Store/FCM),65,
-log-explorer,infra-cloud,GCP ログエクスプローラ監視,50,
+backend,,バックエンド,70,
+be-dev,backend,サーバー・API開発,70,
+api-design,be-dev,API設計 / OpenAPI,90,OpenAPI（Swagger）等を用いたスキーマ駆動開発や、フロントと連携しやすいAPI設計
+docker,be-dev,Docker,50,ローカル開発環境の構築やコンテナ化など、Dockerの基本的な操作・運用
+be-database,backend,データベース,50,
+db-query-basic,be-database,SQLデータ操作,50,基本的なSQLクエリを用いたデータ抽出や、簡単なテーブル設計・構造の理解
+infrastructure,,インフラ・クラウド,65,
+infra-cloud,infrastructure,クラウドインフラ,60,
+gcp-run-logging,infra-cloud,GCP (Cloud Run / Logging),60,Cloud Runへのデプロイ・運用経験や、Cloud Loggingを用いた本番環境の監視とログ調査
+firebase,infra-cloud,Firebase,65,Firebase Auth / Firestore / Cloud Messaging等を用いたモバイル・Webのバックエンド連携
+infra-networking,infrastructure,ネットワーク・認証,75,
+networking-domain,infra-networking,ドメイン / Cookie / 認証,75,DNS・ドメイン設定、CORS等のドメイン制約対応、セキュアなCookie共有や認証設計
 infra-analytics-sdk,infrastructure,計測・分析・各種SDK連携,75,
 bigquery,infra-analytics-sdk,Big Query データ抽出,60,
 google-analytics,infra-analytics-sdk,Google Analytics / GTM,80,

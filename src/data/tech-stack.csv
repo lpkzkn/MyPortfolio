@@ -5,7 +5,8 @@ react,fe-web,React / Next.js,95,現在の開発の主力。これまで多様な
 vuejs,fe-web,VueJS,60,過去にUnity×WebView構成のWebフロントエンドで採用。Vue.js公式のスタイルガイドなど、整備されたマニュアルや規律に沿った開発を好みます。
 typescript,fe-web,TypeScript,92,
 tailwind,fe-web,Tailwind CSS,90,直近は開発効率化のために採用。CSS設計やスタイリング本来の柔軟性を活かしたピュアなCSS実装も好みます。
-seo-tech,fe-web,Webアプリ最適化,85,Next.jsやCore Web Vitalsを意識した、セマンティックで高速なフロントエンドの最適化実装
+seo-tech,fe-web,SEO,85,SEOやCore Web Vitalsを意識した、セマンティックで検索エンジンに強いマークアップ実装
+performance,fe-web,Performance,85,Core Web Vitalsのボトルネック計測や、描画速度（LCP/INP）の改善・最適化
 tanstack,fe-web,TanStack,90,"Next.jsとは対照的な「クライアント起点でサーバー（SSR/Start）へアプローチする」思想に着目。本サイトもこれで作成。"
 fe-mobile,frontend,モバイルアプリ開発,90,
 react-native,fe-mobile,React-Native,92,少しでもWeb版を考えているときよく採用します

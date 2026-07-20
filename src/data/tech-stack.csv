@@ -45,7 +45,6 @@ crashlytics,analytics-observability,Firebase Crashlytics,90,Crashlyticsを用い
 sentry,analytics-observability,Sentry,85,Sentryを用いたフロントエンド・Webアプリのリアルタイムエラー監視とスタックトレースによる調査
 newrelic,analytics-observability,New Relic,70,New Relicを用いた分散トレーシングによる、システム全体のパフォーマンス監視とボトルネック特定
 appsflyer,analytics-observability,AppsFlyer / Adjust,85,
-googlemap-sdk,analytics-observability,GoogleMapSDK 連携,85,
 process,,プロセス・品質,80,
 proc-testing,process,自動テスト・品質保証,88,
 playwright,proc-testing,Playwright,90,WebアプリのE2Eテスト自動化環境の設計・構築・運用経験

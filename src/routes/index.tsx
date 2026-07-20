@@ -23,7 +23,7 @@ function HomePage() {
           <SimpleButton.Primary>経歴・実績を見る</SimpleButton.Primary>
         </Link>
         <Link to="/works">
-          <SimpleButton.Secondary>実績を見る</SimpleButton.Secondary>
+          <SimpleButton.Secondary>制作物を見る</SimpleButton.Secondary>
         </Link>
       </div>
     </div>

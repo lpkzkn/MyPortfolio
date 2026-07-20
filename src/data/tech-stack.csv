@@ -61,3 +61,6 @@ ai,,AI・エージェント,70,
 agentic-coding,ai,Agentic Coding,90,
 agent-skill,ai,Agent SKILL,85,
 sdd,ai,SDD (仕様駆動開発),95,
+claude,ai,Claude,90,Claude (3.5 Sonnet等) を用いたコード生成・ドキュメント作成・仕様策定プロセスの高速化
+cursor,ai,Cursor,90,Cursorをメインエディタとして活用し、AIと協調した高速なコーディングと開発フローの実践
+antigravity,ai,Antigravity,95,GoogleのAIコードアシスタント Antigravity をパートナーとした、高度なペアプログラミングと自律的開発

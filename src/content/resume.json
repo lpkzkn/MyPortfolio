@@ -83,12 +83,6 @@
   ],
   "projects": [
     {
-      "title": "My Portfolio",
-      "description": "本ポートフォリオサイト。React 19, TanStack Router, Tailwind CSS v4 などの最新スタックを用い、GitHub Pages 向けに完全 SSG する極小アーキテクチャで構築しています。",
-      "tech": ["React 19", "TanStack Router", "Tailwind CSS v4"],
-      "github": "https://github.com/lpkzkn/MyPortfolio"
-    },
-    {
       "title": "React Component Library",
       "description": "CVA (Class Variance Authority) と tailwind-merge を活用し、拡張性とテーマカスタマイズ性に優れたヘッドレスUIコンポーネント集。",
       "tech": ["React", "Tailwind CSS", "CVA"],

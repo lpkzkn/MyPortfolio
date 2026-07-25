@@ -4,10 +4,8 @@ import viteReact from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import tsConfigPaths from 'vite-tsconfig-paths'
 
-// GitHub Pages配信用のベースパス。
-// https://<username>.github.io/MyPortfolio/ で配信する想定。
-// カスタムドメインを取得した場合はここを '/' に変更する。
-const BASE_PATH = '/MyPortfolio/'
+// Cloudflare Pages配信用のベースパス。
+const BASE_PATH = '/'
 
 export default defineConfig({
   base: BASE_PATH,

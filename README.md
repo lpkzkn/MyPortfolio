@@ -1,17 +1,23 @@
 # MyPortfolio
 
-**🌐 [https://lpkzkn.github.io/MyPortfolio/](https://lpkzkn.github.io/MyPortfolio/)**
-
 フロントエンドエンジニアの職務経歴・実績紹介ポートフォリオサイト。
 
 ## 技術スタック
 
-- ランタイム / パッケージ管理: [Bun](https://bun.sh/)
-- フレームワーク: [TanStack Start](https://tanstack.com/start)（RC、静的プリレンダリング）
-- スタイリング: [Tailwind CSS v4](https://tailwindcss.com/)
-- バリアント管理: [class-variance-authority (cva)](https://cva.style/)
-- Lint / Format: [Biome](https://biomejs.dev/)
-- ホスティング: GitHub Pages + GitHub Actions
+![Bun](https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white)
+![React 19](https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TanStack Start](https://img.shields.io/badge/TanStack_Start-FF4154?style=for-the-badge&logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Biome](https://img.shields.io/badge/Biome-60A5FA?style=for-the-badge&logo=biome&logoColor=white)
+![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
+
+- **ランタイム / パッケージ管理**: [Bun](https://bun.sh/)
+- **フレームワーク**: [TanStack Start](https://tanstack.com/start)（React 19 / 静的プリレンダリング）
+- **スタイリング**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **バリアント管理**: [class-variance-authority (cva)](https://cva.style/)
+- **Lint / Format**: [Biome](https://biomejs.dev/)
+- **ホスティング**: [Cloudflare Pages](https://pages.cloudflare.com/)
 
 ## セットアップ
 
@@ -28,11 +34,7 @@ bun run dev
 bun run build
 ```
 
-静的プリレンダリングにより、全ページがHTMLファイルとして書き出されます。
-
-**重要**: 初回ビルド後、実際の出力ディレクトリ名（`dist` または `.output/public` など、TanStack StartのRCバージョンによって変わる可能性があります）を確認し、以下の2箇所を実際のパスに合わせてください。
-
-- `.github/workflows/deploy.yml` の `upload-pages-artifact` の `path`
+静的プリレンダリングにより、全ページがHTMLファイルとして書き出されます（`dist/client` 内）。
 
 ## デザインシステム
 
@@ -69,8 +71,5 @@ src/
 
 ## デプロイ
 
-`main` ブランチへのpushで GitHub Actions が自動的にビルド・GitHub Pagesへのデプロイを行います（`.github/workflows/deploy.yml`）。
+`main` ブランチへマージされると、Cloudflare Pages により自動的にビルドと本番環境へのデプロイが実行されます。
 
-GitHub側でリポジトリの Settings → Pages → Source を「GitHub Actions」に設定してください。
-
-公開URL: [https://lpkzkn.github.io/MyPortfolio/](https://lpkzkn.github.io/MyPortfolio/)

@@ -19,3 +19,9 @@ routeTree.gen.ts
 .github/context-mode/
 stats_output.txt
 
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example

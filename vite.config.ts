@@ -4,17 +4,18 @@ import viteReact from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import tsConfigPaths from 'vite-tsconfig-paths'
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 // Cloudflare Pages配信用のベースパス。
 const BASE_PATH = '/'
 
 export default defineConfig({
   base: BASE_PATH,
-  plugins: [
-    tsConfigPaths({
-      projects: ['./tsconfig.json'],
-    }),
-    tailwindcss(),
-    tanstackStart(),
-    viteReact(),
-  ],
+  plugins: [tsConfigPaths({
+    projects: ['./tsconfig.json'],
+  }), tailwindcss(), tanstackStart(), viteReact(), cloudflare({
+    viteEnvironment: {
+      name: "ssr"
+    }
+  })],
 })

@@ -1,3 +1,4 @@
+import { createServerFn } from '@tanstack/react-start'
 import csvContent from '~/data/tech-stack.csv?raw'
 import type { TechNode } from '~/types/tech-stack'
 
@@ -100,9 +101,8 @@ function parseTechStackCSV(csv: string): TechNode[] {
   return cleanTree(roots)
 }
 
-// ビルド（モジュール評価）時に1回だけパースを完了させる
-const cachedTechStack: TechNode[] = parseTechStackCSV(csvContent)
-
-export function getTechStack(): TechNode[] {
-  return cachedTechStack
-}
+export const getTechStack = createServerFn({ method: 'GET' }).handler(
+  async (): Promise<TechNode[]> => {
+    return parseTechStackCSV(csvContent)
+  },
+)

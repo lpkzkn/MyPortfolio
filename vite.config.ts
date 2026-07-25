@@ -14,14 +14,7 @@ export default defineConfig({
       projects: ['./tsconfig.json'],
     }),
     tailwindcss(),
-    tanstackStart({
-      // GitHub PagesはSSRサーバーを持てないため、
-      // ビルド時に全ページを静的HTMLとして書き出すプリレンダリングモードを使う。
-      prerender: {
-        enabled: true,
-        crawlLinks: true,
-      },
-    }),
+    tanstackStart(),
     viteReact(),
   ],
 })

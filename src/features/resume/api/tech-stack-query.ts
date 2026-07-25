@@ -1,6 +1,5 @@
-import fs from 'node:fs'
-import path from 'node:path'
 import { createServerFn } from '@tanstack/react-start'
+import csvContent from '~/data/tech-stack.csv?raw'
 import type { TechNode } from '~/types/tech-stack'
 
 function parseCSVLine(line: string): string[] {
@@ -22,8 +21,8 @@ function parseCSVLine(line: string): string[] {
   return result
 }
 
-function parseTechStackCSV(csvContent: string): TechNode[] {
-  const lines = csvContent.split(/\r?\n/).filter((line) => line.trim() !== '')
+function parseTechStackCSV(csv: string): TechNode[] {
+  const lines = csv.split(/\r?\n/).filter((line) => line.trim() !== '')
 
   // Skip header line
   const dataLines = lines.slice(1)
@@ -104,8 +103,6 @@ function parseTechStackCSV(csvContent: string): TechNode[] {
 
 export const getTechStack = createServerFn({ method: 'GET' }).handler(
   async (): Promise<TechNode[]> => {
-    const filePath = path.resolve(process.cwd(), 'src/data/tech-stack.csv')
-    const csvContent = fs.readFileSync(filePath, 'utf-8')
     return parseTechStackCSV(csvContent)
   },
 )

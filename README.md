@@ -1,7 +1,5 @@
 # MyPortfolio
 
-**🌐 [https://lpkzkn.github.io/MyPortfolio/](https://lpkzkn.github.io/MyPortfolio/)**
-
 フロントエンドエンジニアの職務経歴・実績紹介ポートフォリオサイト。
 
 ## 技術スタック
@@ -11,7 +9,7 @@
 - スタイリング: [Tailwind CSS v4](https://tailwindcss.com/)
 - バリアント管理: [class-variance-authority (cva)](https://cva.style/)
 - Lint / Format: [Biome](https://biomejs.dev/)
-- ホスティング: GitHub Pages + GitHub Actions
+- ホスティング: [Cloudflare Pages](https://pages.cloudflare.com/)
 
 ## セットアップ
 
@@ -28,11 +26,7 @@ bun run dev
 bun run build
 ```
 
-静的プリレンダリングにより、全ページがHTMLファイルとして書き出されます。
-
-**重要**: 初回ビルド後、実際の出力ディレクトリ名（`dist` または `.output/public` など、TanStack StartのRCバージョンによって変わる可能性があります）を確認し、以下の2箇所を実際のパスに合わせてください。
-
-- `.github/workflows/deploy.yml` の `upload-pages-artifact` の `path`
+静的プリレンダリングにより、全ページがHTMLファイルとして書き出されます（`dist/client` 内）。
 
 ## デザインシステム
 
@@ -69,8 +63,5 @@ src/
 
 ## デプロイ
 
-`main` ブランチへのpushで GitHub Actions が自動的にビルド・GitHub Pagesへのデプロイを行います（`.github/workflows/deploy.yml`）。
+`main` ブランチへマージされると、Cloudflare Pages により自動的にビルドと本番環境へのデプロイが実行されます。
 
-GitHub側でリポジトリの Settings → Pages → Source を「GitHub Actions」に設定してください。
-
-公開URL: [https://lpkzkn.github.io/MyPortfolio/](https://lpkzkn.github.io/MyPortfolio/)

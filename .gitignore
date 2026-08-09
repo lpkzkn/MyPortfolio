@@ -19,3 +19,5 @@ routeTree.gen.ts
 .github/context-mode/
 stats_output.txt
 
+# Cloudflare Wrangler
+.wrangler/

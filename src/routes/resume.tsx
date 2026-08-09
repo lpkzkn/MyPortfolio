@@ -23,6 +23,64 @@ export const Route = createFileRoute('/resume')({
       techStack,
     }
   },
+  head: ({ loaderData }) => {
+    const resume = loaderData?.resume
+    const techStack = loaderData?.techStack || []
+
+    // 主要スキルの名前をフラットに抽出
+    const extractSkills = (nodes: typeof techStack): string[] => {
+      const list: string[] = []
+      for (const n of nodes) {
+        list.push(n.name)
+        if (n.children) {
+          list.push(...extractSkills(n.children))
+        }
+      }
+      return list
+    }
+
+    const allSkillNames = extractSkills(techStack)
+
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'ProfilePage',
+      mainEntity: {
+        '@type': 'Person',
+        name: 'Fujisaki Kazuhiko',
+        jobTitle: 'Frontend Engineer',
+        description: resume?.introduction,
+        knowsAbout: allSkillNames,
+        sameAs: ['https://github.com/lpkzkn'],
+        alumniOf: resume?.companies.map((c) => ({
+          '@type': 'OrganizationRole',
+          roleName: c.role,
+          startDate: c.period.split(' - ')[0] || '',
+          endDate: c.period.includes('現在') ? undefined : c.period.split(' - ')[1],
+          alumniOf: {
+            '@type': 'Organization',
+            name: c.name,
+          },
+        })),
+      },
+    }
+
+    return {
+      meta: [
+        { title: '経歴・実績 | MyPortfolio' },
+        {
+          name: 'description',
+          content:
+            'フロントエンドエンジニアとしての職務経歴・実績・技術スタック（React, Next.js, React Native, TypeScript等）の一覧。',
+        },
+      ],
+      scripts: [
+        {
+          type: 'application/ld+json',
+          children: JSON.stringify(jsonLd),
+        },
+      ],
+    }
+  },
   component: ResumePage,
 })
 
@@ -34,6 +92,7 @@ function ResumePage() {
   const handleTechChange = (id: string | undefined) => {
     navigate({
       search: (prev) => ({ ...prev, tech: id || undefined }),
+      resetScroll: false,
     })
   }
 

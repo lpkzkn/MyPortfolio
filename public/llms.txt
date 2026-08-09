@@ -1,0 +1,44 @@
+# Kazuhiko Fujisaki - Portfolio Summary (llms.txt)
+> フロントエンドエンジニア / クライアントサイドエンジニア（Web・ネイティブアプリ・ゲーム）
+
+## 概要
+2006年よりゲーム開発にてエンジニアとしての基礎を構築。2019年よりECサービス運営企業にてフロントエンドエンジニアとしてサービスの成長を牽引。
+React NativeおよびNext.jsを用いた大規模プラットフォーム開発に従事。
+エンジニアリーダーやPM補佐の経験から、技術選定からチーム開発の最適化までを見据えた「ビジネス価値を生む開発」を信条とする。
+
+---
+
+## 主要な技術スタック & スキル
+- **フロントエンド**: React 19, Next.js, React Native, TypeScript, JavaScript, HTML5/CSS3, Tailwind CSS v4, TanStack Start/Router
+- **アーキテクチャ & 設計**: CVA (Class Variance Authority), Atomic Design / Compound Components, デザインシステム構築, OpenAPI スキーマ駆動開発
+- **テスト & 品質管理**: Playwright (E2E自動化), Jest, Magic Pod, Appium, Biome, markuplint, TDD/BDD
+- **CI/CD & デリバリー**: GitHub Actions, Jenkins, App Store / Google Play 署名・配信運用, Cloudflare Workers / Pages
+- **AI & エージェント活用**: Agentic Coding, SDD (仕様駆動開発), Claude, Cursor, Antigravity
+- **モバイル & ゲーム開発**: iOS (Swift/Obj-C), Android (Kotlin/Java), Flutter, Unity (C#), Cocos2d-x
+
+---
+
+## 職務経歴サマリー
+1. **ECサービス運営企業 (2019.06 - 現在) - エンジニアリーダー**
+   - **Web版リプレイス開発 (2025.01 - 現在)**: Next.jsを用いた次世代Webプラットフォームへの刷新・アーキテクチャ設計を主導
+   - **モバイルアプリ開発 (2019.06 - 2024.12)**: React Nativeによるネイティブアプリの機能開発、パフォーマンスチューニング、「QA予約システム」導入による技術負債解消
+2. **ゲーム開発・新規事業開発関連企業 (2014.09 - 2019.04) - エンジニアリーダー / PM補佐**
+   - Unityハイブリッドアプリ開発のコア設計・CI構築、マイルストーン管理・顧客折衝
+3. **ゲーム開発およびシステム開発企業 (2006.09 - 2014.09) - クライアントサイドエンジニア**
+   - 家庭用ゲーム機・PCゲーム・規格システムのクライアントサイド開発、ハードウェア制限下での最適化
+
+---
+
+## 代表的な制作物
+- **MyPortfolio（当サイト）**: React 19・TanStack Start・Tailwind CSS v4・Cloudflare Workers SSR で構築したモダンポートフォリオサイト
+- **React Component Library**: CVAとtailwind-mergeを活用した型安全なヘッドレスUIコンポーネント集
+
+---
+
+## サイトマップ / 関連リンク
+- **Top**: /
+- **経歴・実績**: /resume
+- **制作物**: /works
+- **デザインシステム**: /catalog
+- **このサイトについて**: /about-this-site
+- **GitHub**: https://github.com/lpkzkn

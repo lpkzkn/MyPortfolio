@@ -1,7 +1,12 @@
+# 一般の検索エンジン（Google, Bing等）
+# ※ 検索結果に生の.txtファイルが表示されるのを防ぎます
 User-agent: *
 Allow: /
+Disallow: /llms.txt
+Disallow: /llms-full.txt
 
-# LLMs & AI Search
+# AI・LLMクローラー（ChatGPT, Claude, Perplexity等）
+# ※ AIによる要約・分析用コンテキストとしては全アクセスを許可
 User-agent: GPTBot
 Allow: /
 
@@ -14,5 +19,5 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# LLM info
-# llms.txt: /llms.txt
+# Sitemap
+Sitemap: https://my-portfolio.lpkzkn.workers.dev/sitemap.xml

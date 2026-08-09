@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# LLMs & AI Search
+# LLMs & AI Search Crawlers
 User-agent: GPTBot
 Allow: /
 
@@ -14,5 +14,7 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# LLM info
-# llms.txt: /llms.txt
+# Sitemap & LLMs discovery
+Sitemap: https://my-portfolio.lpkzkn.workers.dev/sitemap.xml
+# llms.txt: https://my-portfolio.lpkzkn.workers.dev/llms.txt
+# llms-full.txt: https://my-portfolio.lpkzkn.workers.dev/llms-full.txt

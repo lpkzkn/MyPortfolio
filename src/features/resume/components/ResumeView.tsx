@@ -1,6 +1,7 @@
 import { SkillSheet } from '~/components/rpg-ui'
 import type { TechNode } from '~/types/tech-stack'
 import type { ResumeData } from '../types'
+import { TechStackDirectory } from './TechStackDirectory'
 import { Timeline } from './Timeline'
 
 interface ResumeViewProps {
@@ -39,6 +40,7 @@ export function ResumeView({
             activeNodeId={activeNodeId}
             onChangeActiveNodeId={onChangeActiveNodeId}
           />
+          <TechStackDirectory techStack={techStack} />
         </div>
       </section>
 

@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# LLMs & AI Search
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# LLM info
+# llms.txt: /llms.txt

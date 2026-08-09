@@ -16,7 +16,10 @@ export const Route = createRootRoute({
         content: 'フロントエンドエンジニアのポートフォリオサイト',
       },
     ],
-    links: [{ rel: 'stylesheet', href: appCss }],
+    links: [
+      { rel: 'stylesheet', href: appCss },
+      { rel: 'alternate', type: 'text/plain', href: '/llms.txt', title: 'LLM Summary' },
+    ],
   }),
   component: RootComponent,
 })

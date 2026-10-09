@@ -8,6 +8,14 @@ export type WorkItem = {
 
 export const workItems: WorkItem[] = [
   {
+    slug: 'gaya-wheel',
+    title: 'がやがやルーレット',
+    summary:
+      '画面共有いらず！全員参加のリアルタイムWebルーレット。URLを貼るだけで最大64人が同時観戦でき、全員のマウスポインタの動きや実況チャットで盛り上がれる参加型アプリです。登録不要ですぐに使えます。',
+    techStack: ['Rust', 'egui', 'WebAssembly', 'WebSocket', 'Cloudflare'],
+    url: 'https://gaya-wheel.app/',
+  },
+  {
     slug: 'my-portfolio',
     title: 'MyPortfolio（このサイト）',
     summary:
